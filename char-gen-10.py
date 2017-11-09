@@ -7,7 +7,7 @@ minor_power_options = []
 
 active_arch = {}
 
-# some changes to check to see if it works
+
 
 # create list of archetype dictionaries
 arch_list = [arch_blaster, arch_brawler, arch_brick]
@@ -16,10 +16,17 @@ arch_list = [arch_blaster, arch_brawler, arch_brick]
 # List of major powers
 
 
-Archery = {'power_name': 'Archery', 'power_type' : 'major', 'description' : 'you can use once per turn...', 'additional_minorp' : ['Entangle', 'Leaping', 'Melee Specialist', 'Obscurement', 'Sonic Blasts', 'Stun', 'Super-Agility'], 'additional_minorp_prefix' : 'Trick Arrow','stat_changes': {'ranged_attack': 1, 'ranged_attack_rr': 1}, 'notes': 'Archery - 15in range, body damage  \n'}
+Archery = {'power_name': 'Archery',
+           'power_type' : 'major',
+           'description' : 'you can use once per turn...',
+           'additional_minorp' : ['Entangle', 'Leaping', 'Melee Specialist', 'Obscurement', 'Sonic Blasts', 'Stun', 'Super-Agility'],
+           'additional_minorp_prefix' : 'Trick Arrow',
+           'add_p_num' : 4,
+           'stat_changes': {'ranged_attack': 1, 'ranged_attack_rr': 1},
+           'notes': 'Archery - 15in range, body damage  \n'}
 
 Power_Blasts = { 'power_name' : 'Power Blasts', 'power_type' : 'major', 'description' : 'You shoot blasts of power (concussive force, cosmic energy, electricity, etc.) from your eyes or hands.  You can make 30in ranged attacks at +2D[1].  Your blasts are physical in nature and inflict Body Damage', 'stat_changes' : {'ranged_attack' : 2, 'ranged_attack_rr': 1}, 'notes': 'Power Blasts - 30in range, body damage \n'}
-# Super-Strength still needed
+
 Super_Strength = {'power_name' : 'Super-Strength', 'power_type': 'major', 'description': 'description here', 'stat_changes': {'melee_attack': 2, 'ranged_attack': 4}, 'notes': 'Hurling - 10in range, body damage, +2D entangle escapes, grappling checks and breaking objects, 4in knockback, +2D on jumping and leaping  \n'}
 
 Scrapper = { 'power_name' : 'Scrapper', 'power_type' : 'major', 'description' : "You're a resourceful, tenacious close-in fighter.  You possess the following abilities: +1D on melee attack rolls, +1D on melee defence rolls, reduce an melee gang-up bonus foes gain against you by -1D, and Counterattack: You posses the Reflection minor power limited to melee attacks.", 'stat_changes': {'melee_attack': 1, 'melee_defence': 1}, 'notes': 'reduce melee gang-up by -1D, and reflection minor power \n Anytime you successfully defend against a Body-damaging attack you can choose to make a Chance roll. On a 2+, your attack- er suffers 2 Body damage. \n'}
@@ -174,13 +181,12 @@ def additional_minor_power_chooser(arch, min_p):
     return minor_power_options
 
 
-
-
 if 'additional_minorp' in active_majp:
-    print('Archer has four more powers')
+    add_minor_p_cycles = active_majp['add_p_num']
+    print('The ' + active_majp['power_name'] + ' Major Power has ' + str(add_minor_p_cycles) + ' more powers')
     list_of_additional_minorp_options = additional_minor_power_chooser(active_majp, minp_list_of)
 
-print(list_of_additional_minorp_options)
+pprint.pprint(list_of_additional_minorp_options)
 
 
 
@@ -194,7 +200,7 @@ for x in range(5):
 for key, value in hero.items():
     print(key, '\t', value)
 
-# ------------------------- this is where the new code begins----------------------------
+# ------------------------- choose minor powers from a list ----------------------------
 
 
 def minor_power_chooser(arch, min_p):
