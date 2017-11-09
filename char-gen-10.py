@@ -7,7 +7,7 @@ minor_power_options = []
 
 active_arch = {}
 
-
+# some changes to check to see if it works
 
 # create list of archetype dictionaries
 arch_list = [arch_blaster, arch_brawler, arch_brick]
