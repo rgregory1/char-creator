@@ -124,11 +124,15 @@ hero['hero_name'] = chosen_name
 
 # Display a list of archetypes to choose from
 print()
-for a in arch_list:
-    print(a['archetype'], ':', a['summary'])
+for n,a in enumerate(arch_list):
+    print(n, ' - ', a['archetype'], ':', a['summary'])
     print()
+arch_choice_num = input('Type the number of the archetype that you would like to build: \n')
 
-arch_choice = input('Type the name of the archetype that you would like to build: \n')
+# print(arch_list[int(arch_choice_num)]['archetype'])
+
+
+arch_choice = arch_list[int(arch_choice_num)]['archetype']
 
 # Add archetype choice to hero dictionary
 hero['hero_arch'] = arch_choice
@@ -149,8 +153,10 @@ if len(active_arch['maj-p']) == 1:
     print('Your Major Power is ' + str(active_arch['maj-p'][0]))
     majp_choice = active_arch['maj-p'][0]
 else:
-    print(active_arch['maj-p'])
-    majp_choice = input('Type the name of the Major Power you Choose: \n')
+    for n, a in enumerate(active_arch['maj-p']):
+        print(n, ' - ', active_arch['maj-p'][n])
+    majp_choice_num = input('Type the number of the Major Power you Choose: \n')
+    majp_choice = active_arch['maj-p'][int(majp_choice_num)]
 
 hero['hero_majp'] = majp_choice
 # print(hero)
@@ -173,12 +179,6 @@ for c in majp_list:
 # Add notes from Major Power
 hero['hero_notes'] = hero['hero_notes'] + active_majp['notes']
 
-"""
-for i in range(10):
-    print()
-
-print('The hero is', hero)
-"""
 # -----------------------Massive section to see if there are additional powers attached to major power
 
 def minor_power_chooser(arch, min_p):
@@ -193,14 +193,17 @@ def minor_power_chooser(arch, min_p):
 def choose_minor_power_from_list(options, cycles):
     active_minor_power = ''
     minor_p_choice = ''
+    minor_p_choice_num = ''
     print('Minor Power Choices \t \t Description \n')
-    for z in options:
-        print(z['power_name'], '\t', z['description'], '\n')  # print powers to choose from
+    for n,z in enumerate(options):
+        print(n, ' - ', z['power_name'], '\t', z['description'], '\n')  # print powers to choose from
 
     print('You have', cycles, 'minor power choices remaining.')  # show number of powers remaining
     print()
 
-    minor_p_choice = input('Please type the name of the minor power you would like: \n')  # choose power
+    minor_p_choice_num = input('Please type the name of the minor power you would like: \n')  # choose power
+
+    minor_p_choice = options[int(minor_p_choice_num)]['power_name']
 
     for c in options:
         if minor_p_choice == c['power_name']:    # attach power dict to active power
@@ -252,23 +255,8 @@ if 'additional_minorp' in active_majp:
         hero['hero_notes'] = hero['hero_notes'] + this_minor_p_choice['notes']
 
         add_minor_p_cycles -= 1
+    # pprint.pprint(list_of_additional_minorp_options)
 
-
-
-
-pprint.pprint(list_of_additional_minorp_options)
-
-
-
-
-
-
-
-for x in range(5):
-    print()
-
-for key, value in hero.items():
-    print(key, '\t', value)
 
 # ------------------------- choose minor powers from a list ----------------------------
 
