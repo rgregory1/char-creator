@@ -25,11 +25,23 @@ Archery = {'power_name': 'Archery',
            'stat_changes': {'ranged_attack': 1, 'ranged_attack_rr': 1},
            'notes': 'Archery - 15in range, body damage  \n'}
 
-Power_Blasts = { 'power_name' : 'Power Blasts', 'power_type' : 'major', 'description' : 'You shoot blasts of power (concussive force, cosmic energy, electricity, etc.) from your eyes or hands.  You can make 30in ranged attacks at +2D[1].  Your blasts are physical in nature and inflict Body Damage', 'stat_changes' : {'ranged_attack' : 2, 'ranged_attack_rr': 1}, 'notes': 'Power Blasts - 30in range, body damage \n'}
+Power_Blasts = { 'power_name' : 'Power Blasts',
+                 'power_type' : 'major',
+                 'description' : 'You shoot blasts of power (concussive force, cosmic energy, electricity, etc.) from your eyes or hands.  You can make 30in ranged attacks at +2D[1].  Your blasts are physical in nature and inflict Body Damage',
+                 'stat_changes' : {'ranged_attack' : 2, 'ranged_attack_rr': 1},
+                 'notes': 'Power Blasts - 30in range, body damage \n'}
 
-Super_Strength = {'power_name' : 'Super-Strength', 'power_type': 'major', 'description': 'description here', 'stat_changes': {'melee_attack': 2, 'ranged_attack': 4}, 'notes': 'Hurling - 10in range, body damage, +2D entangle escapes, grappling checks and breaking objects, 4in knockback, +2D on jumping and leaping  \n'}
+Super_Strength = {'power_name' : 'Super-Strength',
+                  'power_type': 'major',
+                  'description': 'description here',
+                  'stat_changes': {'melee_attack': 2, 'ranged_attack': 4},
+                  'notes': 'Hurling - 10in range, body damage, +2D entangle escapes, grappling checks and breaking objects, 4in knockback, +2D on jumping and leaping  \n'}
 
-Scrapper = { 'power_name' : 'Scrapper', 'power_type' : 'major', 'description' : "You're a resourceful, tenacious close-in fighter.  You possess the following abilities: +1D on melee attack rolls, +1D on melee defence rolls, reduce an melee gang-up bonus foes gain against you by -1D, and Counterattack: You posses the Reflection minor power limited to melee attacks.", 'stat_changes': {'melee_attack': 1, 'melee_defence': 1}, 'notes': 'reduce melee gang-up by -1D, and reflection minor power \n Anytime you successfully defend against a Body-damaging attack you can choose to make a Chance roll. On a 2+, your attack- er suffers 2 Body damage. \n'}
+Scrapper = { 'power_name' : 'Scrapper',
+             'power_type' : 'major',
+             'description' : "You're a resourceful, tenacious close-in fighter.  You possess the following abilities: +1D on melee attack rolls, +1D on melee defence rolls, reduce an melee gang-up bonus foes gain against you by -1D, and Counterattack: You posses the Reflection minor power limited to melee attacks.",
+             'stat_changes': {'melee_attack': 1, 'melee_defence': 1},
+             'notes': 'reduce melee gang-up by -1D, and reflection minor power \n Anytime you successfully defend against a Body-damaging attack you can choose to make a Chance roll. On a 2+, your attack- er suffers 2 Body damage. \n'}
 
 
 # Create list of major powers
@@ -169,40 +181,6 @@ print('The hero is', hero)
 """
 # -----------------------Massive section to see if there are additional powers attached to major power
 
-# check for Archery Major power, if so, choose four additional minor powers
-
-def additional_minor_power_chooser(arch, min_p):
-    minor_power_options = []
-    for x in arch['additional_minorp']:     # create list of minor power options
-        for y in min_p:
-            if x == y['power_name']:
-                y['power_name'] = arch['additional_minorp_prefix'] + ' - ' + y['power_name']
-                minor_power_options.append(y)
-    return minor_power_options
-
-
-if 'additional_minorp' in active_majp:
-    add_minor_p_cycles = active_majp['add_p_num']
-    print('The ' + active_majp['power_name'] + ' Major Power has ' + str(add_minor_p_cycles) + ' more powers')
-    list_of_additional_minorp_options = additional_minor_power_chooser(active_majp, minp_list_of)
-
-pprint.pprint(list_of_additional_minorp_options)
-
-
-
-
-
-
-
-for x in range(5):
-    print()
-
-for key, value in hero.items():
-    print(key, '\t', value)
-
-# ------------------------- choose minor powers from a list ----------------------------
-
-
 def minor_power_chooser(arch, min_p):
     minor_power_options = []
     for x in arch['minor_p_list']:     # create list of minor power options
@@ -232,6 +210,69 @@ def choose_minor_power_from_list(options, cycles):
         if minor_p_choice == d['power_name']:   # remove power from list for future choices
             options.remove(d)
     return active_minor_power, options
+
+
+
+
+# check for Archery Major power, if so, choose four additional minor powers
+
+
+
+def additional_minor_power_chooser(arch, min_p):
+    minor_power_options = []
+    for x in arch['additional_minorp']:     # create list of minor power options
+        for y in min_p:
+            if x == y['power_name']:
+                y['power_name'] = arch['additional_minorp_prefix'] + ' - ' + y['power_name']
+                y['notes'] = arch['additional_minorp_prefix'] + ' - ' + y['notes']
+                minor_power_options.append(y)
+    return minor_power_options
+
+
+if 'additional_minorp' in active_majp:
+    add_minor_p_cycles = active_majp['add_p_num']
+    print('The ' + active_majp['power_name'] + ' Major Power has ' + str(add_minor_p_cycles) + ' additional minor powers')
+    list_of_additional_minorp_options = additional_minor_power_chooser(active_majp, minp_list_of)
+    while add_minor_p_cycles > 0:
+        this_minor_p_choice, list_of_minorp_options = choose_minor_power_from_list(list_of_additional_minorp_options,
+                                                                                   add_minor_p_cycles)
+
+        print('this_minor_p_choice', this_minor_p_choice)  # test to see if correct
+
+        print('minp_list_of', minp_list_of)
+
+        # Pull out adjustments from minor power dict
+        active_minp_adjust = grab_minp_stat_changes(minp_list_of, this_minor_p_choice)
+
+        print('active minor power adjust is', active_minp_adjust)
+
+        # Adjust stats acording to major power
+        hero = hero_stat_adjust(hero, active_minp_adjust)
+
+        hero['hero_notes'] = hero['hero_notes'] + this_minor_p_choice['notes']
+
+        add_minor_p_cycles -= 1
+
+
+
+
+pprint.pprint(list_of_additional_minorp_options)
+
+
+
+
+
+
+
+for x in range(5):
+    print()
+
+for key, value in hero.items():
+    print(key, '\t', value)
+
+# ------------------------- choose minor powers from a list ----------------------------
+
+
 
 
 minor_power_cycles = active_arch['min_p_num']
