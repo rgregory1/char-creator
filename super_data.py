@@ -40,9 +40,19 @@ arch_mastermind = {'archetype': 'Mastermind',
               'maj-p': ['Enhance'],
               'minor_p_list': ['Armor', 'Flight', 'Force_Field', 'Gadgets', 'Iron Will', 'Power Blasts (Minor)', 'Savant', 'Super-Strength (Minor)'],
               'min_p_num': 2,
-              'backgrounds': ['Alien/Dimensional', 'Arcane', 'Art', 'Athletics', 'BlueCollar', 'Business', 'Criminal', 'Espionage', 'Exploration', 'HighSociety', 'Journalist', 'Medicine', 'Military', 'Monarch', 'Performance', 'PublicSafety', 'Science', 'SocialScience']
+              'backgrounds': ['Alien/Dimensional', 'Arcane', 'Art', 'Athletics', 'Blue Collar', 'Business', 'Criminal', 'Espionage', 'Exploration', 'High Society', 'Journalist', 'Medicine', 'Military', 'Monarch', 'Performance', 'Public Safety', 'Science', 'Social Science']
               }
 
+arch_mentalist = {'archetype': 'Mentalist',
+              'summary': "Perhaps you’re the brain-burning psychic warrior of your team, or maybe the empathic healing hand? Your power can lay even a mighty-muscled super low where all others fail, or bring your friends back from the brink of death! Customize your mentalist with whatever minor powers best capture the look and feel you’re after.",
+              'move': 6,
+              'body_points' : 5,
+              'psych_points' : 8,
+              'maj-p': ['Mentalism', 'Healing'],
+              'minor_p_list': ['Enhance (Minor)', 'Enhanced Senses', 'Flight', 'Iron Will', 'Rapport', 'Savant', 'Telekinesis', 'Teleport'],
+              'min_p_num': 2,
+              'backgrounds': ['Alien/Dimensional', 'Arcane', 'Art', 'Athletics', 'Blue Collar', 'Business', 'Criminal', 'Espionage', 'Exploration', 'High Society', 'Journalist', 'Medicine', 'Military', 'Monarch', 'Performance', 'Public Safety', 'Science', 'Social Science']
+              }
 
 my_string = 'Alien / Dimensional, Arcane, Art, Athletics, Blue Collar, Business, Criminal, Espionage, Exploration, High Society, Journalist, Medicine, Military, Monarch, Performance, Public Safety, Science, Social Science'
 my_string = ''.join(my_string.split())

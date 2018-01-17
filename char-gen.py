@@ -22,7 +22,7 @@ minor_power_options = []
 active_arch = {}
 
 # create list of archetype dictionaries
-arch_list = [arch_blaster, arch_brawler, arch_brick, arch_mastermind]
+arch_list = [arch_blaster, arch_brawler, arch_brick, arch_mastermind, arch_mentalist]
 
 
 # List of major powers
@@ -48,6 +48,22 @@ Enhance = {
   'description': 'You can increase the capabilities of characters within 10in of you.',
   'stat_changes': {},
   'notes': 'Enhance - Use a free action and make a 6D check. Every two goals you score grant your target, within 10in, +1 Re-roll to his Re-roll pool. You can split Re-rolls between multiple targets within 10” of you.  \n'
+}
+
+Healing = {
+  'power_name': 'Healing',
+  'power_type': 'major',
+  'description': 'You can heal yourself, or a char- acter in melee contact with you.',
+  'stat_changes': {},
+  'notes': 'Healing - Roll 6D. Every two goals you score restores one lost box of either Body or Psyche damage, or you can mix the boxes restored. You cannot restore more damage boxes than your target began with.  \n'
+}
+
+Mentalism = {
+  'power_name': 'Mentalism',
+  'power_type': 'major',
+  'description': 'You possess brain burning, mind-controlling mental powers!',
+  'stat_changes': {},
+  'notes': 'Mentalism - Mental Blast - This 15in range, 6D attack does Psyche damage. This attack cannot be used in melee.  \n Mentailism - Mind Control (Recharge 2+) -  Roll 6D, 15” range. No damage, but the target immediately activates under your control and may take a free action and either a move, attack, charge, or special action. \n'
 }
 
 Power_Blasts = {
@@ -84,11 +100,11 @@ Scrapper = {
 }
 
 # Create list of major powers
-majp_list = [Archery, Enhance, Power_Blasts, Scrapper, Super_Strength]
+majp_list = [Archery, Enhance, Healing, Mentalism, Power_Blasts, Scrapper, Super_Strength]
 
 # Create list of minor powers
 
-minp_list_of = [Armor, Burrowing, Damage_Field, Density_Increase, Enhanced_Senses, Entangle, Explosion, Flight, Force_Field, Gadgets, Iron_Will, Leaping, Magic_Artifact, Massive, Melee_Specialist, Obscurement, Power_Blasts_Minor, Rage, Resistance, Reflection, Savant, Shield, Sonic_Blasts, Stun, Super_Agility, Super_Strength_Minor]
+minp_list_of = [Armor, Burrowing, Damage_Field, Density_Increase, Enhance_Minor, Enhanced_Senses, Entangle, Explosion, Flight, Force_Field, Gadgets, Iron_Will, Leaping, Magic_Artifact, Massive, Melee_Specialist, Obscurement, Power_Blasts_Minor, Rage, Rapport, Resistance, Reflection, Savant, Shield, Sonic_Blasts, Stun, Super_Agility, Super_Strength_Minor]
 
 # Initiate hero dict
 hero = {'melee_attack' : 4, 'melee_attack_rr' : 0, 'melee_defence' : 4, 'melee_defence_rr' : 0, 'ranged_attack_rr' : 0, 'ranged_defence' : 4, 'ranged_defence_rr' : 0, 'psyche_attack_rr' : 0, 'psyche_defence' : 4, 'psyche_defence_rr' : 0, 'hero_notes': ''}

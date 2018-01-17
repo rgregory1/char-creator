@@ -31,6 +31,14 @@ Density_Increase = {
   'stat_changes': {},
   'notes': 'Density Increase - At the start of your turn, before any movement, spend a free action to activate. While active, you can charge at your base Move value only. While super dense you gain +1 Re-roll on melee attack checks and +1D to melee and ranged defense checks against Body damaging attacks. You’re also immune to all knockback. \n'
 }
+Enhance_Minor = {
+  'power_name': 'Enhance (Minor)',
+  'power_type': 'minor',
+  'description': 'You can increase the capabilities of characters within 5” of you.',
+  'stat_changes': {},
+  'notes': 'Enhance (Minor) - Special action 5D check. Every two goals you score grant your target, within 5in, +1 Re-roll to his re-roll pool. You can split Re-rolls between multiple targets within 5in of you. \n'
+}
+
 
 Enhanced_Senses = {'power_name' : 'Enhanced Senses',
                    'power_type': 'minor',
@@ -149,6 +157,14 @@ Power_Blasts_Minor = {
   'notes': 'You can make 15in ranged attacks that inflict Body Damage \n'
 }
 
+Rapport = {
+  'power_name': 'Rapport',
+  'power_type': 'minor',
+  'description': 'Choose another character on your team; you possess a special mental link with that character. This link grants you both additional strength. ',
+  'stat_changes': {},
+  'notes': 'Rapport - Choose a team mate, so long as both characters are not KO’ed, they can share +1D between them for any defense checks. As soon as once charter uses the +1D, it is spent until the beginning of the next round. \n'
+}
+
 Rage = {
   'power_name': 'Rage',
   'power_type': 'minor',
@@ -231,6 +247,10 @@ Super_Strength_Minor = {
   },
   'notes': '+1D to entangle escapes, grappling checks, and on breaking objects, +1D on Jumping and Leaping checks, inflict knockback at 2in per body damage'
 }
+
+Telekinesis
+
+Teleport
 
 Generic = {
   'power_name': 'name',
