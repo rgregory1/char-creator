@@ -32,6 +32,12 @@ Density_Increase = {
   'notes': 'Density Increase - At the start of your turn, before any movement, spend a free action to activate. While active, you can charge at your base Move value only. While super dense you gain +1 Re-roll on melee attack checks and +1D to melee and ranged defense checks against Body damaging attacks. You’re also immune to all knockback. \n'
 }
 
+Enhanced_Senses = {'power_name' : 'Enhanced Senses',
+                   'power_type': 'minor',
+                   'description' :  'You possess heightened physical and/or psionic senses that allow you to ignore environmental conditions like darkness.',
+                   'stat_changes': {},
+                   'notes': 'Enhanced Senses - +2D on perception checks to spot hidden, invisible, or obscured characters, team gains +1 Re-roll on initiative checks \n'}
+
 Explosion = {
   'power_name': 'Explosion',
   'power_type': 'minor',
@@ -177,6 +183,13 @@ Savant = {
   'stat_changes': {},
   'notes': 'Savant - You enjoy +1 Re-roll on any checks during a battle that involve non-combat situations. Including initiative, movement, objective, perception, and summoning checks, but not KO checks. At the beginning of each battle, after all models have been placed, but before the first round begins, you may take a non-charge Move action. \n'
 }
+
+Shield = {'power_name' : 'Shield',
+          'power_type': 'minor',
+          'description' :  'You possess a super-hard shield.',
+          'stat_changes': {'melee_attack_rr' : 1, 'melee_defence_rr' : 1, 'ranged_defence_rr' : 1,},
+          'notes': 'Shield - You can hurl it as a 3D, 5in ranged attack, and it always returns to your hand. Can also ricochet ranged attack to a second target within 5in of you. In this case you make a single attack goal roll, and your targets make separate, +1D defense goal rolls. \n'}
+
 
 Sonic_Blasts = {
   'power_name': 'Sonic Blasts',
