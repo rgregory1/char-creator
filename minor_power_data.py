@@ -248,9 +248,9 @@ Super_Strength_Minor = {
   'notes': '+1D to entangle escapes, grappling checks, and on breaking objects, +1D on Jumping and Leaping checks, inflict knockback at 2in per body damage'
 }
 
-Telekinesis
-
-Teleport
+# Telekinesis
+#
+# Teleport
 
 Generic = {
   'power_name': 'name',

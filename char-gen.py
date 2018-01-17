@@ -1,6 +1,7 @@
 import pprint
 from super_data import *
 from minor_power_data import *
+from print_character import *
 
 Stats = {
   'melee_attack': 4,
@@ -309,3 +310,6 @@ while minor_power_cycles > 0:
 # end of new code
 
 pprint.pprint(hero)
+
+
+print_out_hero(hero)
