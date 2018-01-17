@@ -101,7 +101,7 @@ Leaping = {
   'power_type': 'minor',
   'description': 'Your super-strong legs propel you high into the air with pro- digious leaps!',
   'stat_changes': {},
-  'notes': '4D action check. Declare where you want to land. You can leap up to 10in + goals scored high and 20in + goals scored long. \n'
+  'notes': 'Leaping - 4D action check. Declare where you want to land. You can leap up to 10in + goals scored high and 20in + goals scored long. \n'
 }
 
 Magic_Artifact = {
