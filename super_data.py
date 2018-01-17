@@ -23,7 +23,16 @@ arch_brick = {'archetype': 'Brick',
               'body_points' : 8,
               'psych_points' : 6,
               'maj-p': ['Super-Strength'],
-              'minor_p_list': ['Armor', 'Burrowig', 'Density Increase', 'Leaping', 'Magic Artifact', 'Massive', 'Rage', 'Resistance'],
+              'minor_p_list': ['Armor', 'Burrowing', 'Density Increase', 'Leaping', 'Magic Artifact', 'Massive', 'Rage', 'Resistance'],
+              'min_p_num': 2}
+
+arch_mastermind = {'archetype': 'Mastermind',
+              'summary': "You’re the master planner, natural leader, or brilliant tactician of your team. Your guidance can make or break the destiny of your group! Customize your mastermind with whatever minor powers best capture the look and feel you’re after.",
+              'move': 6,
+              'body_points' : 6,
+              'psych_points' : 6,
+              'maj-p': ['Enhance'],
+              'minor_p_list': ['Armor', 'Flight', 'Force_Field', 'Gadgets', 'Iron Will', 'Power Blasts (Minor)', 'Savant', 'Super-Strength (Minor)'],
               'min_p_num': 2}
 
 # this is my added change! and another change
