@@ -13,7 +13,7 @@ Burrowing = {
   'power_type': 'minor',
   'description': 'You can travel underground at your normal Move rate.',
   'stat_changes': {},
-  'notes': '. It costs a free action to submerge and start burrowing, or stop burrowing and re-surface, but once you’ve surfaced, you cannot burrow again until next turn. You can burrow through or under any intervening terrain as if it were normal ground. You cannot resurface within a solid object. Instead of attacking when you surface, you can create fissures and tremors. Use your special action to create these tremors; any enemies within 5in of you must make a TN3 check or be knocked down. \n'
+  'notes': 'Burrowing - It costs a free action to submerge and start burrowing, or stop burrowing and re-surface, but once you’ve surfaced, you cannot burrow again until next turn. You can burrow through or under any intervening terrain as if it were normal ground. You cannot resurface within a solid object. Instead of attacking when you surface, you can create fissures and tremors. Use your special action to create these tremors; any enemies within 5in of you must make a TN3 check or be knocked down. \n'
 }
 
 Damage_Field = {
@@ -245,7 +245,7 @@ Super_Strength_Minor = {
   'stat_changes': {
     'melee_attack': 1
   },
-  'notes': '+1D to entangle escapes, grappling checks, and on breaking objects, +1D on Jumping and Leaping checks, inflict knockback at 2in per body damage'
+  'notes': '+1D to entangle escapes, grappling checks, and on breaking objects, +1D on Jumping and Leaping checks, inflict knockback at 2in per body damage \n'
 }
 
 # Telekinesis

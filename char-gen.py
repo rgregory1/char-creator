@@ -84,9 +84,9 @@ Super_Strength = {
   'description': 'description here',
   'stat_changes': {
     'melee_attack': 2,
-    'ranged_attack': 4
+    'ranged_attack': 0
   },
-  'notes': 'Super-Strength (Major) - Hurling - 10in range, body damage, +2D entangle escapes, grappling checks and breaking objects, 4in knockback, +2D on jumping and leaping  \n'
+  'notes': 'Super-Strength (Major) - Hurling - 10in range, body damage, +2D entangle escapes, grappling checks and breaking objects, 4in knockback, +2D on jumping and leaping.  \n'
 }
 
 Scrapper = {
@@ -291,10 +291,10 @@ list_of_minorp_options = minor_power_chooser(active_arch, minp_list_of)
 while minor_power_cycles > 0:
     this_minor_p_choice, list_of_minorp_options = choose_minor_power_from_list(list_of_minorp_options,minor_power_cycles)
 
-    print('this_minor_p_choice', this_minor_p_choice) # test to see if correct
+    # print('this_minor_p_choice', this_minor_p_choice) # test to see if correct
 
-    print('minp_list_of', minp_list_of)
-
+    # print('minp_list_of', minp_list_of)
+    pprint.pprint(hero)
     # Pull out adjustments from minor power dict
     active_minp_adjust = grab_minp_stat_changes(minp_list_of, this_minor_p_choice)
 

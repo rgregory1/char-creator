@@ -54,8 +54,7 @@ arch_mentalist = {'archetype': 'Mentalist',
               'backgrounds': ['Alien/Dimensional', 'Arcane', 'Art', 'Athletics', 'Blue Collar', 'Business', 'Criminal', 'Espionage', 'Exploration', 'High Society', 'Journalist', 'Medicine', 'Military', 'Monarch', 'Performance', 'Public Safety', 'Science', 'Social Science']
               }
 
-my_string = 'Alien / Dimensional, Arcane, Art, Athletics, Blue Collar, Business, Criminal, Espionage, Exploration, High Society, Journalist, Medicine, Military, Monarch, Performance, Public Safety, Science, Social Science'
-my_string = ''.join(my_string.split())
-my_list = my_string.split(",")
-print(my_list)
-# this is my added change! and another change
+# my_string = 'Alien / Dimensional, Arcane, Art, Athletics, Blue Collar, Business, Criminal, Espionage, Exploration, High Society, Journalist, Medicine, Military, Monarch, Performance, Public Safety, Science, Social Science'
+# my_string = ''.join(my_string.split())
+# my_list = my_string.split(",")
+# print(my_list)
