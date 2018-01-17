@@ -39,7 +39,7 @@ Archery = {
     'ranged_attack': 1,
     'ranged_attack_rr': 1
   },
-  'notes': 'Archery - 15in range, body damage  \n'
+  'notes': 'Archery (Major)- 15in range, body damage  \n'
 }
 
 Enhance = {
@@ -58,7 +58,7 @@ Power_Blasts = {
     'ranged_attack': 2,
     'ranged_attack_rr': 1
   },
-  'notes': 'Power Blasts - 30in range, body damage \n'
+  'notes': 'Power Blasts (Major)- 30in range, body damage \n'
 }
 
 Super_Strength = {
@@ -69,7 +69,7 @@ Super_Strength = {
     'melee_attack': 2,
     'ranged_attack': 4
   },
-  'notes': 'Hurling - 10in range, body damage, +2D entangle escapes, grappling checks and breaking objects, 4in knockback, +2D on jumping and leaping  \n'
+  'notes': 'Super-Strength (Major) - Hurling - 10in range, body damage, +2D entangle escapes, grappling checks and breaking objects, 4in knockback, +2D on jumping and leaping  \n'
 }
 
 Scrapper = {
@@ -149,7 +149,7 @@ for a in arch_list:
 
 
 hero['body_points'] = active_arch['body_points']
-hero['psych_pionts'] = active_arch['psych_points']
+hero['psych_points'] = active_arch['psych_points']
 hero['move'] = active_arch['move']
 
 
@@ -207,7 +207,7 @@ def choose_minor_power_from_list(options, cycles):
     print('You have', cycles, 'minor power choices remaining.')  # show number of powers remaining
     print()
 
-    minor_p_choice_num = input('Please type the name of the minor power you would like: \n')  # choose power
+    minor_p_choice_num = input('Please type the number of the minor power you would like: \n')  # choose power
 
     minor_p_choice = options[int(minor_p_choice_num)]['power_name']
 

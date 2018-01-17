@@ -6,7 +6,9 @@ arch_blaster = {'archetype': 'Blaster',
                 'psych_points' : 6,
                 'maj-p' : ['Archery', 'Power Blasts'],
                 'minor_p_list': ['Damage Field', 'Explosion', 'Flight', 'Force-Field', 'Iron Will', 'Resistance', 'Reaction', 'Super-Strength'],
-                'min_p_num': 2}
+                'min_p_num': 2,
+                'backgrounds': ['Alien/Dimensional', 'Arcane', 'Art', 'Athletics', 'Blue Collar', 'Business', 'Criminal', 'Espionage', 'Exploration', 'High Society', ' Journalist', 'Medicine', 'Military', 'Monarch', 'Performance', 'Public Safety', 'Science', 'Social Science']
+                }
 
 arch_brawler = {'archetype': 'Brawler',
                 'summary' : "You're a close in fighter who relies on sheer bravado,...",
@@ -15,7 +17,9 @@ arch_brawler = {'archetype': 'Brawler',
                 'psych_points': 6,
                 'maj-p': ['Scrapper'],
                 'minor_p_list': ['Enhanced Senses', 'Fortune', 'Iron Will', 'Melee Specialist', 'Regen', 'Resistance', 'Shield', 'Super Agility'],
-                'min_p_num': 2}
+                'min_p_num': 2,
+                'backgrounds': ['Alien/Dimensional', 'Arcane', 'Art', 'Athletics', 'Blue Collar', 'Business', 'Criminal', 'Espionage', 'Exploration', 'High Society', ' Journalist', 'Medicine', 'Military', 'Monarch', 'Performance', 'Public Safety', 'Science', 'Social Science']
+                }
 
 arch_brick = {'archetype': 'Brick',
               'summary': "You're the bruising, super-strong fighter on your team...",
@@ -24,7 +28,9 @@ arch_brick = {'archetype': 'Brick',
               'psych_points' : 6,
               'maj-p': ['Super-Strength'],
               'minor_p_list': ['Armor', 'Burrowing', 'Density Increase', 'Leaping', 'Magic Artifact', 'Massive', 'Rage', 'Resistance'],
-              'min_p_num': 2}
+              'min_p_num': 2,
+              'backgrounds': ['Alien/Dimensional', 'Arcane', 'Art', 'Athletics', 'Blue Collar', 'Business', 'Criminal', 'Espionage', 'Exploration', 'High Society', 'Journalist', 'Medicine', 'Military', 'Monarch', 'Performance', 'Public Safety', 'Science', 'Social Science']
+              }
 
 arch_mastermind = {'archetype': 'Mastermind',
               'summary': "You’re the master planner, natural leader, or brilliant tactician of your team. Your guidance can make or break the destiny of your group! Customize your mastermind with whatever minor powers best capture the look and feel you’re after.",
@@ -33,6 +39,13 @@ arch_mastermind = {'archetype': 'Mastermind',
               'psych_points' : 6,
               'maj-p': ['Enhance'],
               'minor_p_list': ['Armor', 'Flight', 'Force_Field', 'Gadgets', 'Iron Will', 'Power Blasts (Minor)', 'Savant', 'Super-Strength (Minor)'],
-              'min_p_num': 2}
+              'min_p_num': 2,
+              'backgrounds': ['Alien/Dimensional', 'Arcane', 'Art', 'Athletics', 'BlueCollar', 'Business', 'Criminal', 'Espionage', 'Exploration', 'HighSociety', 'Journalist', 'Medicine', 'Military', 'Monarch', 'Performance', 'PublicSafety', 'Science', 'SocialScience']
+              }
 
+
+my_string = 'Alien / Dimensional, Arcane, Art, Athletics, Blue Collar, Business, Criminal, Espionage, Exploration, High Society, Journalist, Medicine, Military, Monarch, Performance, Public Safety, Science, Social Science'
+my_string = ''.join(my_string.split())
+my_list = my_string.split(",")
+print(my_list)
 # this is my added change! and another change
