@@ -23,10 +23,7 @@ minor_power_options = []
 active_arch = {}
 
 # create list of archetype dictionaries
-arch_list = [arch_blaster, arch_brawler, arch_brick, arch_mastermind, arch_mentalist]
-
-
-# List of major powers
+arch_list = [arch_blaster, arch_brawler, arch_brick, arch_mastermind, arch_mentalist, arch_metamorph]
 
 
 Archery = {
@@ -67,6 +64,14 @@ Mentalism = {
   'notes': 'Mentalism - Mental Blast - This 15in range, 6D attack does Psyche damage. This attack cannot be used in melee.  \n Mentailism - Mind Control (Recharge 2+) -  Roll 6D, 15” range. No damage, but the target immediately activates under your control and may take a free action and either a move, attack, charge, or special action. \n'
 }
 
+Metamorph = {
+  'power_name': 'Metamorph',
+  'power_type': 'major',
+  'description': "You possess ultimate control over your body. You may be elastic and malleable, or a shapeshifter capable of assuming multiple forms! You maintain a somewhat normal human- oid form that allows you to wear clothing and communicate normally, but you can will this form to stretch or change at your whim. ",
+  'stat_changes': {},
+  'notes': 'Choose either the Elasticity or Shape-Shifter tracks when you select this power. At the beginning of each game, and then at the beginning of each turn, spend a free action and select one of the packages of powers and bene ts listed under your track. These each represent different forms or shapes your body can take: \n Elasticity - Form 1: Melee Specialist, +6” Move, +10” Reach - Form 2: Multiple Limbs, Save, Super-Agility - Form 3: Entangle, Resistance, Stun (Body) \n Shape-Shifter - Form 4: Leaping, Melee Specialist, +4” Reach - Form 5: Enhanced Senses, Entangle, Super-Agility -Form 6: Armor, Flight, Power Blasts (minor) \n Metamorph - If you’re a Shape-Shifter, you can replace any power or abili- ty in the above forms with the Amphibious power.\n Metamorph - If you take the Shape-Shifter track you can give up the minor power selection the Metamorph archetype grants you and instead choose one of the forms from the Elasticity track to give yourself even more versatility!'
+}
+
 Power_Blasts = {
   'power_name': 'Power Blasts',
   'power_type': 'major',
@@ -101,18 +106,19 @@ Scrapper = {
 }
 
 # Create list of major powers
-majp_list = [Archery, Enhance, Healing, Mentalism, Power_Blasts, Scrapper, Super_Strength]
+majp_list = [Archery, Enhance, Healing, Mentalism, Metamorph, Power_Blasts, Scrapper, Super_Strength]
 
 # Create list of minor powers
 
-minp_list_of = [Armor, Burrowing, Damage_Field, Density_Increase, Enhance_Minor, Enhanced_Senses, Entangle, Explosion, Flight, Force_Field, Fortune, Gadgets, Iron_Will, Leaping, Magic_Artifact, Massive, Melee_Specialist, Obscurement, Power_Blasts_Minor, Rage, Rapport, Regen, Resistance, Reflection, Savant, Shield, Sonic_Blasts, Stun, Super_Agility, Super_Strength_Minor, Telekinesis, Teleport]
+minp_list_of = [Armor, Burrowing, Damage_Field, Density_Increase, Enhance_Minor, Enhanced_Senses, Entangle, Explosion, Flight, Force_Field, Fortune, Gadgets, Iron_Will, Leaping, Magic_Artifact, Massive, Melee_Specialist, Mimic, Obscurement, Power_Blasts_Minor, Rage, Rapport, Regen, Resistance, Reflection, Savant, Shield, Sonic_Blasts, Stun, Super_Agility, Super_Strength_Minor, Telekinesis, Teleport]
 
 # Initiate hero dict
 hero = {'melee_attack' : 4, 'melee_attack_rr' : 0, 'melee_defence' : 4, 'melee_defence_rr' : 0, 'ranged_attack_rr' : 0, 'ranged_defence' : 4, 'ranged_defence_rr' : 0, 'psyche_attack_rr' : 0, 'psyche_defence' : 4, 'psyche_defence_rr' : 0, 'hero_notes': ''}
 
 
-# Adjust hero dict with stats from powers
+
 def hero_stat_adjust(base,adjusts):
+    """retrun hero dict with adjusted stats"""
     for key in adjusts:
         base[key] = base.get(key, 4) + adjusts[key]
     return base

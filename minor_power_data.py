@@ -31,6 +31,7 @@ Density_Increase = {
   'stat_changes': {},
   'notes': 'Density Increase - At the start of your turn, before any movement, spend a free action to activate. While active, you can charge at your base Move value only. While super dense you gain +1 Re-roll on melee attack checks and +1D to melee and ranged defense checks against Body damaging attacks. You’re also immune to all knockback. \n'
 }
+
 Enhance_Minor = {
   'power_name': 'Enhance (Minor)',
   'power_type': 'minor',
@@ -105,6 +106,15 @@ Iron_Will = {
   'notes': 'Iron Will - You can resist the effects of mental powers better than most! Gain +1D to your defense checks against any Psyche based mental attack. Also gain +1D on all KO checks. \n'
 }
 
+Jinx = {
+  'power_name': 'Jinx',
+  'power_type': 'minor',
+  'description': 'You can curse others with bad luck!',
+  'stat_changes': {},
+  'notes': 'Jinx - Make a 5D, 15in ranged Psyche attack. If you score more goals than your opponent, then he will have the TNs for all rolls he has to make on his next turn increased by one. Also, any movement actions taken will require a TN3 check (not increased by the Jinx), with one Body lost per goal missed—from tripping, exploding manhole covers, falling pianos, etc. Targets cannot suffer the effects of more than one jinx at once. \n'
+}
+
+
 Leaping = {
   'power_name': 'Leaping',
   'power_type': 'minor',
@@ -144,6 +154,14 @@ Melee_Specialist = {
     'melee_defence': 1
   },
   'notes': 'Melee Speicialist - +2D on any checks to break objects or escape entangles \n'
+}
+
+Mimic = {
+  'power_name': 'Mimic',
+  'power_type': 'minor',
+  'description': 'You can copy the powers of a character in melee or within 5in of you.',
+  'stat_changes': {},
+  'notes': 'Mimic - Once per turn use a free action to make a 5D Psyche-based opposed check against your target. If you win each goal scored grants you a power or boost of your choice from the target. For friendly models make the check against a TN2. Major powers count as two powers for purposes of this check result. You retain copied powers for the remainder of the game, or until you spend a free action to clear them, at which point you can attempt to copy another target’s powers, or even the same target as before if you choose.  \n'
 }
 
 Obscurement = {
@@ -248,8 +266,16 @@ Stun = {
   'notes': 'Stun - Body or Psyche based attack. 5D, 15in ranged attack that inflicts stun. \n'
 }
 
+Summoning = {
+  'power_name': 'Summoning',
+  'power_type': 'minor',
+  'description': 'You can use a special action to summon beings to  ght for you and your team! ',
+  'stat_changes': {},
+  'notes': 'Summoning - (Recharge 2+) The type of being or creature you sum- mon is based on its dif culty to summon. Roll 4D and check your goals: 3 goals = Body 4, Psyche 4, Move 5”, 1 minor power, - 4 goals = Body 5, Psyche 5, Move 6”, 1 minor power, - 5+ goals = Body 6, Psyche 6, Move 7”, 1 minor power \n'
+}
+
 Super_Agility = {
-  'power_name': 'Super Agility',
+  'power_name': 'Super-Agility',
   'power_type': 'minor',
   'description': "You gain +2in to your move and +1 Re-roll on all defense checks against Body damaging attacks, and any check to avoid being knocked down. You can move up, hang from, and walk along vertical surfaces as if they were normal ground. You can also spend a Move action to move between structures or other vertical terrain pieces within 15in of each other.",
   'stat_changes': {
@@ -267,7 +293,7 @@ Super_Strength_Minor = {
   'stat_changes': {
     'melee_attack': 1
   },
-  'notes': '+1D to entangle escapes, grappling checks, and on breaking objects, +1D on Jumping and Leaping checks, inflict knockback at 2in per body damage \n'
+  'notes': 'Super-Strength - +1D to entangle escapes, grappling checks, and on breaking objects, +1D on Jumping and Leaping checks, inflict knockback at 2in per body damage \n'
 }
 
 Telekinesis = {
