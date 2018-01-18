@@ -39,12 +39,13 @@ Enhance_Minor = {
   'notes': 'Enhance (Minor) - Special action 5D check. Every two goals you score grant your target, within 5in, +1 Re-roll to his re-roll pool. You can split Re-rolls between multiple targets within 5in of you. \n'
 }
 
-
-Enhanced_Senses = {'power_name' : 'Enhanced Senses',
-                   'power_type': 'minor',
-                   'description' :  'You possess heightened physical and/or psionic senses that allow you to ignore environmental conditions like darkness.',
-                   'stat_changes': {},
-                   'notes': 'Enhanced Senses - +2D on perception checks to spot hidden, invisible, or obscured characters, team gains +1 Re-roll on initiative checks \n'}
+Enhanced_Senses = {
+  'power_name' : 'Enhanced Senses',
+  'power_type': 'minor',
+  'description' :  'You possess heightened physical and/or psionic senses that allow you to ignore environmental conditions like darkness.',
+  'stat_changes': {},
+  'notes': 'Enhanced Senses - +2D on perception checks to spot hidden, invisible, or obscured characters, team gains +1 Re-roll on initiative checks \n'
+}
 
 Explosion = {
   'power_name': 'Explosion',
@@ -76,6 +77,14 @@ Force_Field = {
   'description': 'You wield protective energies. Decide when you acquire this power whether it shields against Body or Psyche damage. Your Force-Field grants you a separate 4D defense goal roll against incoming attacks.',
   'stat_changes': {},
   'notes': 'Force-Field - Decide when you acquire this power whether it shields against Body or Psyche damage. Your Force-Field grants you a separate 4D defense goal roll against incoming attacks. If an attack gets through, you must make a second defense goal roll against the full incoming attack. You may also protect additional characters within 10in of you. Use a special action and make a 4D check and note your goals - 2 goals = 1 character 3 goals = 2 characters 4 goals = 3 characters. Decide which characters to protect before making your check. Protected characters must remain within 10in of you to enjoy your Force-Fields benefits. Maximum Protection - You can push your Force-Field to its limits, rolling 6D instead of 4D for its protection, but succeed or fail, the power shuts down after this one enhanced use. You must decide to push your field prior to your foes attack goal roll. Recharge 2+ \n'
+}
+
+Fortune = {
+  'power_name': 'Fortune',
+  'power_type': 'minor',
+  'description': 'You’re darn lucky or capable of manipulating probabilities in your favor when it counts the most.',
+  'stat_changes': {},
+  'notes': 'Fortune - Recharge 2+, Gain +1D[1] on a defense roll against any attack. You can decide to use this ability after you’ve made your initial defense roll!  \n'
 }
 
 Gadgets = {
@@ -145,7 +154,6 @@ Obscurement = {
   'notes': 'Obscurement - Anytime a foe tries to detect you, he must make a TN3 perception check. If failed you get +1 re-roll to Body Damage attacks, +1 re-roll to Body Damage defence, +1 to hide checks, Recharge 1+ \n'
 }
 
-
 Power_Blasts_Minor = {
   'power_name': 'Power Blasts (Minor)',
   'power_type': 'minor',
@@ -154,7 +162,7 @@ Power_Blasts_Minor = {
     'ranged_attack': 1,
     'ranged_attack_rr': 1,
   },
-  'notes': 'You can make 15in ranged attacks that inflict Body Damage \n'
+  'notes': 'Power Blasts (Minor) - You can make 15in ranged attacks that inflict Body Damage \n'
 }
 
 Rapport = {
@@ -181,6 +189,14 @@ Reflection = {
   'notes': 'Anytime you successfully defend against a Body-damaging attack you can choose to make a Chance roll. On a 2+, your attacker suffers 2 Body damage. \n'
 }
 
+Regen = {
+  'power_name': 'Regen',
+  'power_type': 'minor',
+  'description': 'You possess the potential to heal yourself! This could be from a natural mutant power, injected nanites, cosmic energy, or whatever.',
+  'stat_changes': {},
+  'notes': 'Regen - At the beginning of any turn you begin at less than full Body or Psyche, make a Chance roll. You regain 1 + goals scored lost damage. You can spread this healing between both of your damage tracks. If you lose the last box in either damage track, but make your KO check, your healing could slow down. Make a Chance roll for Regen, but only the goals on the throw count as your healing. This power stops working for the rest of the battle if you fail a KO check. \n'
+}
+
 Resistance = {
   'power_name': 'Resistance',
   'power_type': 'minor',
@@ -200,11 +216,17 @@ Savant = {
   'notes': 'Savant - You enjoy +1 Re-roll on any checks during a battle that involve non-combat situations. Including initiative, movement, objective, perception, and summoning checks, but not KO checks. At the beginning of each battle, after all models have been placed, but before the first round begins, you may take a non-charge Move action. \n'
 }
 
-Shield = {'power_name' : 'Shield',
-          'power_type': 'minor',
-          'description' :  'You possess a super-hard shield.',
-          'stat_changes': {'melee_attack_rr' : 1, 'melee_defence_rr' : 1, 'ranged_defence_rr' : 1,},
-          'notes': 'Shield - You can hurl it as a 3D, 5in ranged attack, and it always returns to your hand. Can also ricochet ranged attack to a second target within 5in of you. In this case you make a single attack goal roll, and your targets make separate, +1D defense goal rolls. \n'}
+Shield = {
+  'power_name' : 'Shield',
+  'power_type': 'minor',
+  'description' :  'You possess a super-hard shield.',
+  'stat_changes': {
+    'melee_attack_rr' : 1,
+    'melee_defence_rr' : 1,
+    'ranged_defence_rr' : 1,
+  },
+  'notes': 'Shield - You can hurl it as a 3D, 5in ranged attack, and it always returns to your hand. Can also ricochet ranged attack to a second target within 5in of you. In this case you make a single attack goal roll, and your targets make separate, +1D defense goal rolls. \n'
+}
 
 
 Sonic_Blasts = {
@@ -248,9 +270,21 @@ Super_Strength_Minor = {
   'notes': '+1D to entangle escapes, grappling checks, and on breaking objects, +1D on Jumping and Leaping checks, inflict knockback at 2in per body damage \n'
 }
 
-# Telekinesis
-#
-# Teleport
+Telekinesis = {
+  'power_name': 'Telekinesis',
+  'power_type': 'minor',
+  'description': 'You can move objects with your mind, grapple foes at range, and levitate yourself and others!',
+  'stat_changes': {},
+  'notes': 'Telekinesis - As a special or combat action lift, carry, and wield objects up to 15in away as if you had minor Super-Strength--this includes using an object as a super-club! Target must also be within 15in range. \n Telekinesis - Use a combat action to grapple a foe up to 15” away as if you possessed minor Super-Strength. \n Telekinesis - On your move action levitate yourself and one friendly character within 15” of you up to 6”, and up to 15” in height. Your friend must remain within your 15” sphere of TK in uence. You and your levitated friend must land at the end of your move. \n'
+}
+
+Teleport = {
+  'power_name': 'Teleport',
+  'power_type': 'minor',
+  'description': 'You can move from one point to another instantaneously!',
+  'stat_changes': {},
+  'notes': 'Teleport - Teleporting costs a move action, and when you do so make a goal roll. You move up to 10in + 5in per goal scored. You can move to any point on the board whether you can see it or not. If you teleport out of melee combat, your foe still gets a free attack on you. If you are knocked back from a successful hit, measure your teleport distance from the point where your knockback ends. \n'
+}
 
 Generic = {
   'power_name': 'name',

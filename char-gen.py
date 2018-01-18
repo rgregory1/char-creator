@@ -105,7 +105,7 @@ majp_list = [Archery, Enhance, Healing, Mentalism, Power_Blasts, Scrapper, Super
 
 # Create list of minor powers
 
-minp_list_of = [Armor, Burrowing, Damage_Field, Density_Increase, Enhance_Minor, Enhanced_Senses, Entangle, Explosion, Flight, Force_Field, Gadgets, Iron_Will, Leaping, Magic_Artifact, Massive, Melee_Specialist, Obscurement, Power_Blasts_Minor, Rage, Rapport, Resistance, Reflection, Savant, Shield, Sonic_Blasts, Stun, Super_Agility, Super_Strength_Minor]
+minp_list_of = [Armor, Burrowing, Damage_Field, Density_Increase, Enhance_Minor, Enhanced_Senses, Entangle, Explosion, Flight, Force_Field, Fortune, Gadgets, Iron_Will, Leaping, Magic_Artifact, Massive, Melee_Specialist, Obscurement, Power_Blasts_Minor, Rage, Rapport, Regen, Resistance, Reflection, Savant, Shield, Sonic_Blasts, Stun, Super_Agility, Super_Strength_Minor, Telekinesis, Teleport]
 
 # Initiate hero dict
 hero = {'melee_attack' : 4, 'melee_attack_rr' : 0, 'melee_defence' : 4, 'melee_defence_rr' : 0, 'ranged_attack_rr' : 0, 'ranged_defence' : 4, 'ranged_defence_rr' : 0, 'psyche_attack_rr' : 0, 'psyche_defence' : 4, 'psyche_defence_rr' : 0, 'hero_notes': ''}
