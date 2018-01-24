@@ -1,0 +1,216 @@
+{
+  "Blaster": {
+    "archetype": "Blaster",
+    "power_type": "archetype",
+    "summary": "You project destructive energies...",
+    "move": 6,
+    "body_points": 6,
+    "psych_points": 6,
+    "maj-p": [
+      "Archery",
+      "Power Blasts"
+    ],
+    "min_p_num": 2,
+    "minor_p_list": [
+      "Damage_Field",
+      "Explosion",
+      "Flight",
+      "Force-Field",
+      "Iron_Will",
+      "Resistance",
+      "Reaction",
+      "Super-Strength"
+    ]
+  },
+  "Brawler": {
+    "archetype": "Brawler",
+    "power_type": "archetype",
+    "summary": "You are a close in fighter who relies on sheer bravado,...",
+    "move": 7,
+    "body_points": 7,
+    "psych_points": 6,
+    "maj-p": [
+      "Scrapper"
+    ],
+    "min_p_num": 2,
+    "minor_p_list": [
+      "Enhanced_Senses",
+      "Fortune",
+      "Iron_Will",
+      "Melee_Specialist",
+      "Regen",
+      "Resistance",
+      "Shield",
+      "Super-Agility"
+    ]
+  },
+  "Brick": {
+    "archetype": "Brick",
+    "power_type": "archetype",
+    "summary": "You are the bruising, super-strong fighter on your team...",
+    "move": 5,
+    "body_points": 8,
+    "psych_points": 6,
+    "maj-p": [
+      "Super-Strength"
+    ],
+    "min_p_num": 2,
+    "minor_p_list": [
+      "Armor",
+      "Burrowing",
+      "Density_Increase",
+      "Leaping",
+      "Magic_Artifact",
+      "Massive",
+      "Rage",
+      "Resistance"
+    ]
+  },
+  "Mastermind": {
+    "archetype": "Mastermind",
+    "power_type": "archetype",
+    "summary": "You are the master planner, natural leader, or brilliant tactician of your team. Your guidance can make or break the destiny of your group!",
+    "move": 6,
+    "body_points": 6,
+    "psych_points": 6,
+    "maj-p": [
+      "Enhance"
+    ],
+    "min_p_num": 2,
+    "minor_p_list": [
+      "Armor",
+      "Flight",
+      "Force_Field",
+      "Gadgets",
+      "Iron_Will",
+      "Power_Blasts_(Minor)",
+      "Savant",
+      "Super-Strength_(Minor)"
+    ]
+  },
+  "Mentalist": {
+    "archetype": "Mentalist",
+    "power_type": "archetype",
+    "summary": "Perhaps you are the brain-burning psychic warrior of your team, or maybe the empathic healing hand? Your power can lay even a mighty-muscled super low where all others fail, or bring your friends back from the brink of death!",
+    "move": 6,
+    "body_points": 5,
+    "psych_points": 8,
+    "maj-p": [
+      "Mentalism",
+      "Healing"
+    ],
+    "min_p_num": 2,
+    "minor_p_list": [
+      "Enhance_(Minor)",
+      "Enhanced_Senses",
+      "Flight",
+      "Iron_Will",
+      "Rapport",
+      "Savant",
+      "Telekinesis",
+      "Teleport"
+    ]
+  },
+  "Metamorph": {
+    "archetype": "Metamorph",
+    "power_type": "archetype",
+    "summary": "Your versatile body makes you the Swiss-Army knife of supers! You might possess stretching powers, elastic skin, shape-shifting powers, adaptive nanites, or something else, but no matter what, you can get the job done.",
+    "move": 6,
+    "body_points": 6,
+    "psych_points": 6,
+    "maj-p": [
+      "Metamorph"
+    ],
+    "min_p_num": 2,
+    "minor_p_list": [
+      "Armor",
+      "Enhanced_Senses",
+      "Iron_Will",
+      "Mimic",
+      "Resistance",
+      "Savant",
+      "Super-Agility",
+      "Super-Strength"
+    ]
+  },
+  "Powerhouse": {
+    "archetype": "Powerhouse",
+    "power_type": "alternate_power_level_archetype",
+    "archetype_number": 2,
+    "summary": "You are one of the mightiest beings on the planet, or maybe you just have lots of cool powers! This archetype combines the best aspects of two of the standard archetypes listed in the preceding pages. That is right, take two of our archetypes and jam them together! You get the better Move, Body, and Psyche ratings between the two.",
+    "move": 0,
+    "body_points": 0,
+    "psych_points": 0,
+    "major_power_number": 2,
+    "maj-p": [
+      "All"
+    ],
+    "minor_p_list": [
+      "Dependant"
+    ]
+  },
+  "Super": {
+    "archetype": "Super",
+    "power_type": "alternate_power_level_archetype",
+    "archetype_number": 1,
+    "additional_minor_powers": 2,
+    "summary": "You’re somewhere between one of the nine standard archetypes and a Powerhouse. For game balance purposes you count as 1 1/2 times a normal archetype. Choose one of the nine standard archetypes as your base. Then choose two additional minor powers from your list. You may also trade two minor power selections from your own list for one minor power from any other archetype list. You may also trade up to two minor powers for up to two Boosts.",
+    "move": 0,
+    "body_points": 0,
+    "psych_points": 0,
+    "major_power_number": 1,
+    "maj-p": [
+      "All"
+    ],
+    "minor_p_list": [
+      "Dependant"
+    ]
+  },
+  "Street_Level": {
+    "archetype": "Street Level",
+    "power_type": "archetype",
+    "summary": "You are a hero or villain whose habits and powers keep you close to the streets. Protecting a neighborhood or small borough, or pulling small jobs like bank heists are your specialty.",
+    "move": 6,
+    "body_points": 5,
+    "psych_points": 5,
+    "maj-p": [
+      "Null"
+    ],
+    "min_p_num": 2,
+    "minor_p_list": [
+      "Armor",
+      "Burrowing",
+      "Damage_Field",
+      "Density_Increase",
+      "Enhance_(Minor)",
+      "Enhanced_Senses",
+      "Entangle",
+      "Explosion",
+      "Flight",
+      "Force-Field",
+      "Fortune",
+      "Gadgets",
+      "Iron_Will",
+      "Leaping",
+      "Magic_Artifact",
+      "Massive",
+      "Melee_Specialist",
+      "Mimic",
+      "Obscurement",
+      "Power_Blasts_(Minor)",
+      "Rage",
+      "Rapport",
+      "Regen",
+      "Resistance",
+      "Reflection",
+      "Savant",
+      "Shield",
+      "Sonic_Blasts",
+      "Stun",
+      "Super-Agility",
+      "Super-Strength",
+      "Telekinesis",
+      "Teleport"
+    ]
+  }
+}

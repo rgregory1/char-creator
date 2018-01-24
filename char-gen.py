@@ -1,7 +1,25 @@
 import pprint
-from super_data import *
-from minor_power_data import *
+import json
+import logging
+logging.basicConfig(level=logging.DEBUG)
+# logging.disable(logging.CRITICAL)
 from print_character import *
+import time
+
+
+# grab info from JSON file and assign it to a variable -----------------------
+
+with open('data/minor_power_data.json') as f:
+    min_power_dict = json.load(f)
+
+with open('data/major_power_data.json') as f:
+    maj_power_dict = json.load(f)
+
+with open('data/archetype_data.json') as f:
+    arch_dict = json.load(f)
+
+# initiate lists and dicts for later use ---------------------------------------
+
 
 Stats = {
   'melee_attack': 4,
@@ -18,102 +36,109 @@ Stats = {
   'psyche_defence_rr': 0
 }
 
-minor_power_options = []
-
-active_arch = {}
-
-# create list of archetype dictionaries
-arch_list = [arch_blaster, arch_brawler, arch_brick, arch_mastermind, arch_mentalist, arch_metamorph]
-
-
-Archery = {
-  'power_name': 'Archery',
-  'power_type': 'major',
-  'description': 'you can use once per turn...',
-  'additional_minorp': ['Entangle', 'Leaping', 'Melee Specialist', 'Obscurement', 'Sonic Blasts', 'Stun', 'Super-Agility'],
-  'additional_minorp_prefix': 'Trick Arrow',
-  'add_p_num': 4,
-  'stat_changes': {
-    'ranged_attack': 1,
-    'ranged_attack_rr': 1
-  },
-  'notes': 'Archery (Major)- 15in range, body damage  \n'
-}
-
-Enhance = {
-  'power_name': 'Enhance',
-  'power_type': 'major',
-  'description': 'You can increase the capabilities of characters within 10in of you.',
-  'stat_changes': {},
-  'notes': 'Enhance - Use a free action and make a 6D check. Every two goals you score grant your target, within 10in, +1 Re-roll to his Re-roll pool. You can split Re-rolls between multiple targets within 10” of you.  \n'
-}
-
-Healing = {
-  'power_name': 'Healing',
-  'power_type': 'major',
-  'description': 'You can heal yourself, or a char- acter in melee contact with you.',
-  'stat_changes': {},
-  'notes': 'Healing - Roll 6D. Every two goals you score restores one lost box of either Body or Psyche damage, or you can mix the boxes restored. You cannot restore more damage boxes than your target began with.  \n'
-}
-
-Mentalism = {
-  'power_name': 'Mentalism',
-  'power_type': 'major',
-  'description': 'You possess brain burning, mind-controlling mental powers!',
-  'stat_changes': {},
-  'notes': 'Mentalism - Mental Blast - This 15in range, 6D attack does Psyche damage. This attack cannot be used in melee.  \n Mentailism - Mind Control (Recharge 2+) -  Roll 6D, 15” range. No damage, but the target immediately activates under your control and may take a free action and either a move, attack, charge, or special action. \n'
-}
-
-Metamorph = {
-  'power_name': 'Metamorph',
-  'power_type': 'major',
-  'description': "You possess ultimate control over your body. You may be elastic and malleable, or a shapeshifter capable of assuming multiple forms! You maintain a somewhat normal human- oid form that allows you to wear clothing and communicate normally, but you can will this form to stretch or change at your whim. ",
-  'stat_changes': {},
-  'notes': 'Choose either the Elasticity or Shape-Shifter tracks when you select this power. At the beginning of each game, and then at the beginning of each turn, spend a free action and select one of the packages of powers and bene ts listed under your track. These each represent different forms or shapes your body can take: \n Elasticity - Form 1: Melee Specialist, +6” Move, +10” Reach - Form 2: Multiple Limbs, Save, Super-Agility - Form 3: Entangle, Resistance, Stun (Body) \n Shape-Shifter - Form 4: Leaping, Melee Specialist, +4” Reach - Form 5: Enhanced Senses, Entangle, Super-Agility -Form 6: Armor, Flight, Power Blasts (minor) \n Metamorph - If you’re a Shape-Shifter, you can replace any power or abili- ty in the above forms with the Amphibious power.\n Metamorph - If you take the Shape-Shifter track you can give up the minor power selection the Metamorph archetype grants you and instead choose one of the forms from the Elasticity track to give yourself even more versatility!'
-}
-
-Power_Blasts = {
-  'power_name': 'Power Blasts',
-  'power_type': 'major',
-  'description': 'You shoot blasts of power (concussive force, cosmic energy, electricity, etc.) from your eyes or hands.  You can make 30in ranged attacks at +2D[1].  Your blasts are physical in nature and inflict Body Damage',
-  'stat_changes': {
-    'ranged_attack': 2,
-    'ranged_attack_rr': 1
-  },
-  'notes': 'Power Blasts (Major)- 30in range, body damage \n'
-}
-
-Super_Strength = {
-  'power_name': 'Super-Strength',
-  'power_type': 'major',
-  'description': 'description here',
-  'stat_changes': {
-    'melee_attack': 2,
-    'ranged_attack': 0
-  },
-  'notes': 'Super-Strength (Major) - Hurling - 10in range, body damage, +2D entangle escapes, grappling checks and breaking objects, 4in knockback, +2D on jumping and leaping.  \n'
-}
-
-Scrapper = {
-  'power_name': 'Scrapper',
-  'power_type': 'major',
-  'description': "You're a resourceful, tenacious close-in fighter.  You possess the following abilities: +1D on melee attack rolls, +1D on melee defence rolls, reduce an melee gang-up bonus foes gain against you by -1D, and Counterattack: You posses the Reflection minor power limited to melee attacks.",
-  'stat_changes': {
-    'melee_attack': 1,
-    'melee_defence': 1
-  },
-  'notes': 'reduce melee gang-up by -1D, and reflection minor power \n Anytime you successfully defend against a Body-damaging attack you can choose to make a Chance roll. On a 2+, your attack- er suffers 2 Body damage. \n'
-}
-
-# Create list of major powers
-majp_list = [Archery, Enhance, Healing, Mentalism, Metamorph, Power_Blasts, Scrapper, Super_Strength]
-
-# Create list of minor powers
-
-minp_list_of = [Armor, Burrowing, Damage_Field, Density_Increase, Enhance_Minor, Enhanced_Senses, Entangle, Explosion, Flight, Force_Field, Fortune, Gadgets, Iron_Will, Leaping, Magic_Artifact, Massive, Melee_Specialist, Mimic, Obscurement, Power_Blasts_Minor, Rage, Rapport, Regen, Resistance, Reflection, Savant, Shield, Sonic_Blasts, Stun, Super_Agility, Super_Strength_Minor, Telekinesis, Teleport]
-
 # Initiate hero dict
-hero = {'melee_attack' : 4, 'melee_attack_rr' : 0, 'melee_defence' : 4, 'melee_defence_rr' : 0, 'ranged_attack_rr' : 0, 'ranged_defence' : 4, 'ranged_defence_rr' : 0, 'psyche_attack_rr' : 0, 'psyche_defence' : 4, 'psyche_defence_rr' : 0, 'hero_notes': ''}
+hero = {
+  'melee_attack': 4,
+  'melee_attack_rr': 0,
+  'melee_defence': 4,
+  'melee_defence_rr': 0,
+  'ranged_attack_rr': 0,
+  'ranged_defence': 4,
+  'ranged_defence_rr': 0,
+  'psyche_attack_rr': 0,
+  'psyche_defence': 4,
+  'psyche_defence_rr': 0,
+  'hero_notes': '',
+  'hero_type': 'Standard'
+}
+
+new_arch_dict = {}
+
+# begin all functions ----------------------------------------------------------
+
+def assign_base_points(hero_info, new):
+    """ assigns base points from archetype to main dictionary """
+    hero_info['body_points'] = new['body_points']
+    hero_info['psych_points'] = new['psych_points']
+    hero_info['move'] = new['move']
+    return(hero_info)
+
+def choose_power(current_dict, type):
+    """ enter a dictionary and create a list to choose from, return chosen dictionary """
+    for n,a in enumerate(current_dict):
+        current_dict[a]['identifier'] = n
+        print(current_dict[a]['identifier'], ' - ', current_dict[a]['archetype'], ':', current_dict[a]['summary'])
+        print()
+
+    while True:
+        #check to see if number typed is valid
+        choice_range = len(current_dict)
+        choice_num = int(input('Type the number of the' + str(type) +'that you would like to build: \n'))
+        if choice_num < choice_range:
+            break
+        else:
+            print('Your typed a number not allowed, please choose again! \n \n')
+    for b in current_dict:
+        if choice_num == current_dict[b]['identifier']:
+            # set hero archetype/power to one chosen from list
+            final = arch_dict[b].copy()
+    return(final)
+
+# begin building hero ----------------------------------------------------------
+
+# Pick a name for the hero and add it to the hero dictionary
+print(10 * '\n')
+chosen_name = input('Choose the name of your hero: ')
+hero['hero_name'] = chosen_name
+print(10 * '\n')
+
+# Display a list of archetypes to choose from ----------------------------------
+hero['main_archetype'] = choose_power(arch_dict, 'archetype')
+
+# check for street level heros and set hero type
+if hero['main_archetype']['archetype'] == 'Street Level':
+    hero['hero_type'] = 'Street Level'
+
+# if chosen archetype is standard, set stats
+if hero['main_archetype']['power_type'] == 'archetype':
+    hero = assign_base_points(hero, hero['main_archetype'])
+
+# if archetype is alt power level, start to do special stuff
+elif hero['main_archetype']['power_type'] == 'alternate_power_level_archetype':
+    # creat new dict without alt power levels in it
+    for d in arch_dict:
+        if arch_dict[d]['power_type'] != 'alternate_power_level_archetype' and arch_dict[d]['archetype'] != 'Street Level':
+            new_arch_dict[d] = arch_dict[d].copy()
+    loops = hero['main_archetype']['major_power_number']
+    while loops > 0:
+        # print new list to choose from
+        if 'archetype_base' not in hero:
+            print('Due to your intitial Archetype choice of ' + str(hero['main_archetype']['archetype']) + ' you are allowed to choose ' + str(loops) + ' additional archetype/s:')
+            hero['archetype_base'] = choose_power(new_arch_dict, 'archetype')
+            hero = assign_base_points(hero, hero['archetype_base'])
+        else:
+            print('this works')
+        loops -= 1
+
+
+
+
+
+
+time.sleep(5)
+logging.debug(pprint.pformat(hero))
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -141,39 +166,12 @@ def grab_minp_stat_changes(base, choice):
             adjustments = b['stat_changes'].copy()
     return adjustments
 
-# Pick a name for the hero and add it to the hero dictionary
-chosen_name = input('Choose the name of your hero: ')
-hero['hero_name'] = chosen_name
-
-# Display a list of archetypes to choose from
-print()
-for n,a in enumerate(arch_list):
-    print(n, ' - ', a['archetype'], ':', a['summary'])
-    print()
-
-while True:
-    choice_range = len(arch_list)
-    arch_choice_num = int(input('Type the number of the archetype that you would like to build: \n'))
-    if arch_choice_num <= choice_range:
-        break
-    else:
-        print('Your typed a number not allowed, please choose again! \n \n')
-# print(arch_list[int(arch_choice_num)]['archetype'])
 
 
-arch_choice = arch_list[int(arch_choice_num)]['archetype']
-
-# Add archetype choice to hero dictionary
-hero['hero_arch'] = arch_choice
-
-for a in arch_list:
-    if arch_choice == a['archetype']:
-        active_arch = a.copy()
 
 
-hero['body_points'] = active_arch['body_points']
-hero['psych_points'] = active_arch['psych_points']
-hero['move'] = active_arch['move']
+
+
 
 
 # Choose major power
