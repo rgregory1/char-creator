@@ -63,7 +63,7 @@ def assign_base_points(hero_info, new):
     hero_info['move'] = new['move']
     return(hero_info)
 
-def choose_power(current_dict, type):
+def choose_power(current_dict, power_type):
     """ enter a dictionary and create a list to choose from, return chosen dictionary """
     for n,a in enumerate(current_dict):
         current_dict[a]['identifier'] = n
@@ -73,7 +73,7 @@ def choose_power(current_dict, type):
     while True:
         #check to see if number typed is valid
         choice_range = len(current_dict)
-        choice_num = int(input('Type the number of the' + str(type) +'that you would like to build: \n'))
+        choice_num = int(input('Type the number of the' + str(power_type) +'that you would like to build: \n'))
         if choice_num < choice_range:
             break
         else:
@@ -81,8 +81,9 @@ def choose_power(current_dict, type):
     for b in current_dict:
         if choice_num == current_dict[b]['identifier']:
             # set hero archetype/power to one chosen from list
-            final = arch_dict[b].copy()
-    return(final)
+            final = current_dict.pop(b)
+            break
+    return(final, current_dict)
 
 # begin building hero ----------------------------------------------------------
 
@@ -93,7 +94,7 @@ hero['hero_name'] = chosen_name
 print(10 * '\n')
 
 # Display a list of archetypes to choose from ----------------------------------
-hero['main_archetype'] = choose_power(arch_dict, 'archetype')
+hero['main_archetype'], arch_dict = choose_power(arch_dict, 'arch')
 
 # check for street level heros and set hero type
 if hero['main_archetype']['archetype'] == 'Street Level':
@@ -107,7 +108,7 @@ if hero['main_archetype']['power_type'] == 'archetype':
 elif hero['main_archetype']['power_type'] == 'alternate_power_level_archetype':
     # creat new dict without alt power levels in it
     for d in arch_dict:
-        if arch_dict[d]['power_type'] != 'alternate_power_level_archetype' and arch_dict[d]['archetype'] != 'Street Level':
+        if arch_dict[d]['power_type'] != 'alternate_power_level_archetype' or arch_dict[d]['archetype'] != 'Street Level':
             new_arch_dict[d] = arch_dict[d].copy()
     loops = hero['main_archetype']['major_power_number']
     while loops > 0:

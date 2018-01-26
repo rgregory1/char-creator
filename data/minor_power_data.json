@@ -30,7 +30,7 @@
   "Enhance_(Minor)": {
     "power_name": "Enhance (Minor)",
     "power_type": "minor",
-    "description": "You can increase the capabilities of characters within 5\u201d of you.",
+    "description": "You can increase the capabilities of characters within 5in of you.",
     "stat_changes": {},
     "notes": "Enhance (Minor) - Special action 5D check. Every two goals you score grant your target, within 5in, +1 Re-roll to his re-roll pool. You can split Re-rolls between multiple targets within 5in of you. \n"
   },
@@ -72,7 +72,7 @@
   "Fortune": {
     "power_name": "Fortune",
     "power_type": "minor",
-    "description": "You\u2019re darn lucky or capable of manipulating probabilities in your favor when it counts the most.",
+    "description": "You are darn lucky or capable of manipulating probabilities in your favor when it counts the most.",
     "stat_changes": {},
     "notes": "Fortune - Recharge 2+, Gain +1D[1] on a defense roll against any attack. You can decide to use this ability after you\u2019ve made your initial defense roll!  \n"
   },
@@ -165,7 +165,7 @@
     "power_type": "minor",
     "description": "Choose another character on your team; you possess a special mental link with that character. This link grants you both additional strength. ",
     "stat_changes": {},
-    "notes": "Rapport - Choose a team mate, so long as both characters are not KO\u2019ed, they can share +1D between them for any defense checks. As soon as once charter uses the +1D, it is spent until the beginning of the next round. \n"
+    "notes": "Rapport - Choose a team mate, so long as both characters are not KO'ed, they can share +1D between them for any defense checks. As soon as once charter uses the +1D, it is spent until the beginning of the next round. \n"
   },
   "Regen": {
     "power_name": "Regen",
@@ -194,7 +194,7 @@
   "Savant": {
     "power_name": "Savant",
     "power_type": "minor",
-    "description": "You\u2019re brilliant and you enjoy +1 Re-roll on any checks during a battle that involve non-combat situations.",
+    "description": "You are brilliant and you enjoy +1 Re-roll on any checks during a battle that involve non-combat situations.",
     "stat_changes": {},
     "notes": "Savant - You enjoy +1 Re-roll on any checks during a battle that involve non-combat situations. Including initiative, movement, objective, perception, and summoning checks, but not KO checks. At the beginning of each battle, after all models have been placed, but before the first round begins, you may take a non-charge Move action. \n"
   },
@@ -251,7 +251,7 @@
     "power_type": "minor",
     "description": "You can move objects with your mind, grapple foes at range, and levitate yourself and others!",
     "stat_changes": {},
-    "notes": "Telekinesis - As a special or combat action lift, carry, and wield objects up to 15in away as if you had minor Super-Strength--this includes using an object as a super-club! Target must also be within 15in range. \n Telekinesis - Use a combat action to grapple a foe up to 15\u201d away as if you possessed minor Super-Strength. \n Telekinesis - On your move action levitate yourself and one friendly character within 15\u201d of you up to 6\u201d, and up to 15\u201d in height. Your friend must remain within your 15\u201d sphere of TK in uence. You and your levitated friend must land at the end of your move. \n"
+    "notes": "Telekinesis - As a special or combat action lift, carry, and wield objects up to 15in away as if you had minor Super-Strength--this includes using an object as a super-club! Target must also be within 15in range. \n Telekinesis - Use a combat action to grapple a foe up to 15\u201d away as if you possessed minor Super-Strength. \n Telekinesis - On your move action levitate yourself and one friendly character within 15\u201d of you up to 6\u201d, and up to 15\u201d in height. Your friend must remain within your 15in sphere of TK in uence. You and your levitated friend must land at the end of your move. \n"
   },
   "Teleport": {
     "power_name": "Teleport",
@@ -259,5 +259,34 @@
     "description": "You can move from one point to another instantaneously!",
     "stat_changes": {},
     "notes": "Teleport - Teleporting costs a move action, and when you do so make a goal roll. You move up to 10in + 5in per goal scored. You can move to any point on the board whether you can see it or not. If you teleport out of melee combat, your foe still gets a free attack on you. If you are knocked back from a successful hit, measure your teleport distance from the point where your knockback ends. \n"
+  },
+  "Clever": {
+    "power_name": "Clever",
+    "power_type": "boost",
+    "description": "Your quick wits and keen mind make you a team asset!",
+    "stat_changes": {
+      "psych_points": 1
+    },
+    "notes": ["Clever - Add +1D to your leader's initiative so long as you're not KO'ed."]
+  },
+  "Fast": {
+    "power_name": "Fast",
+    "power_type": "boost",
+    "description": "You are no speedster, but you are quicker than normal!",
+    "stat_changes": {
+      "move": 4,
+      "ranged_defence_rr": 1
+    },
+    "notes": ["Fast"]
+  },
+  "Tough": {
+    "power_name": "Tough",
+    "power_type": "boost",
+    "description": "You are one tough cuss!",
+    "stat_changes": {
+      "body_points": 1,
+      "melee_defence_rr": 1
+    },
+    "notes": ["Tough"]
   }
 }
