@@ -3,7 +3,7 @@
     "power_name": "Archery",
     "power_type": "major",
     "description": "you can use once per turn...",
-    "additional_minorp": [
+    "additional_minor_powers": [
       "Entangle",
       "Leaping",
       "Melee_Specialist",
@@ -12,7 +12,7 @@
       "Stun",
       "Super-Agility"
     ],
-    "additional_minorp_prefix": "Trick Arrow",
+    "additional_power_prefix": "Trick Arrow",
     "add_p_num": 4,
     "stat_changes": {
       "ranged_attack": 1,
@@ -79,6 +79,28 @@
     "notes": [
       "Scrapper - reduce melee gang-up by -1D, and reflection minor power",
       "Anytime you successfully defend against a Body-damaging attack you can choose to make a Chance roll. On a 2+, your attack- er suffers 2 Body damage."]
+  },
+  "Sorcery": {
+    "power_name": "Sorcery",
+    "power_type": "major",
+    "description": "You're a resourceful, tenacious close-in fighter.  You possess the following abilities: +1D on melee attack rolls, +1D on melee defence rolls, reduce an melee gang-up bonus foes gain against you by -1D, and Counterattack: You posses the Reflection minor power limited to melee attacks.",
+    "additional_minor_powers": [
+      "Entangle",
+      "Leaping",
+      "Melee_Specialist",
+      "Obscurement",
+      "Sonic_Blasts",
+      "Stun",
+      "Super-Agility"
+    ],
+    "additional_power_prefix": "Grimoire",
+    "add_p_num": 4,
+    "stat_changes": {
+      "melee_attack": 1,
+      "melee_defence": 1
+    },
+    "notes": [
+      "Sorcery - (Recharge 2+)"]
   },
   "Super-Strength": {
     "power_name": "Super-Strength",

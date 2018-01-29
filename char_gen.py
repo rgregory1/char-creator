@@ -75,15 +75,16 @@ def assign_max_points(hero_info, new):
 
 def choose_power(current_dict, power_type):
     """ enter a dictionary and create a list to choose from, return chosen dictionary """
+    print(power_type + ' Choices \t \t Description \n')
     for n,a in enumerate(current_dict):
         current_dict[a]['identifier'] = n
-        print(current_dict[a]['identifier'], ' - ', current_dict[a]['archetype'], ':', current_dict[a]['summary'])
+        print(current_dict[a]['identifier'], ' - ', current_dict[a]['power_name'], ' : \t', current_dict[a]['description'])
         print()
 
     while True:
         #check to see if number typed is valid
         choice_range = len(current_dict)
-        choice_num = int(input('Type the number of the' + str(power_type) +'that you would like to build: \n'))
+        choice_num = int(input('Type the number of the ' + str(power_type) +' that you would like: \n'))
         if choice_num < choice_range:
             break
         else:
@@ -145,12 +146,11 @@ elif hero['hero_archetype_list'][0]['power_type'] == 'Super' or hero['hero_arche
         loops -= 1
 
 print('\n finished with archetypes \n')
-time.sleep(3)
+time.sleep(1)
 
 
 
 # begin Major Power choice and adjustments -------------------------------------
-major_power_loop = 1
 # Create archetype dict that we can destroy
 mutable_archetype_list = [x for x in hero['hero_archetype_list']]
 # check for powerhouse and ajust for double archetype powers, first if = super power level
@@ -159,7 +159,6 @@ if len(mutable_archetype_list) == 2:
 # second if equals powerhouse
 if len(mutable_archetype_list) == 3:
     print('Due to your Powerhouse Archetype, you will go through the Major Power and Minor Power choice process twice:')
-    major_power_loop = 2
     del mutable_archetype_list[0]
 
 
@@ -175,18 +174,70 @@ for arch in mutable_archetype_list:
             print(n, ' - ', arch['maj-p'][n])
         majp_choice_num = input('Type the number of the Major Power you Choose: \n')
         majp_choice = arch['maj-p'][int(majp_choice_num)]
-    # assign major power choice to the hero dict
-    hero['hero_major_power_list'].insert(0, majp_choice)
+
     for majorpower in maj_power_dict:
         if majp_choice == maj_power_dict[majorpower]['power_name']:
             current_major_power = maj_power_dict[majorpower].copy()
             break
-    print(current_major_power)
+    # print()
+    # print(current_major_power)
+    # print()
+    # assign major power choice to the hero dict
+    hero['hero_major_power_list'].insert(0, current_major_power)
     # adjust stats based on major power choosen
     hero = hero_stat_adjust(hero,current_major_power['stat_changes'])
     # Add notes from Major Power
     hero['hero_notes'].extend(current_major_power['notes'])
 
+    # print('current major power is:')
+    # print(arch)
+    # begin minor power Choices ------------------------------------------------
+
+
+    current_minor_power_dict = {}
+    for x in min_power_dict:
+        for y in arch['minor_p_list']:
+            if x == y:
+                current_minor_power_dict[x] = min_power_dict[x].copy()
+            elif min_power_dict[x]['power_type'] == 'boost':
+                current_minor_power_dict[x] = min_power_dict[x].copy()
+
+    # remove current minor powers from list for powerhouse archetype second group of minor power Choices
+    if hero['hero_minor_power_list'] is not []:
+        for x in hero['hero_minor_power_list']:
+            for y in current_minor_power_dict.copy():
+                if x['power_name'] == y:
+                    del current_minor_power_dict[y]
+    # set up number of looks for minor powers and boosts
+    boost_loops = 1
+    loops = arch['min_p_num']
+    # add two minor powers to super archetypes powers, and two boost options
+    if hero['hero_type'] == 'Super':
+        loops = loops + 2
+        boost_loops = 2
+    while loops > 0:
+        print(5 * '\n')
+        print('\nYou may now choose ', str(loops), 'minor powers from the following list: \n' )
+        current_minor_power, current_minor_power_dict = choose_power(current_minor_power_dict, 'minor power')
+        # adjust stats based on major power choosen
+        hero = hero_stat_adjust(hero,current_minor_power['stat_changes'])
+        # Add notes from Major Power
+        hero['hero_notes'].extend(current_minor_power['notes'])
+        # add to list of minor powers
+        hero['hero_minor_power_list'].insert(0, current_minor_power)
+        # remove boosts from chooses once one is choosen (or two for supers)
+        if current_minor_power['power_type'] == 'boost':
+            boost_loops -= 1
+            if boost_loops == 0:
+                for x in current_minor_power_dict.copy():
+                    if current_minor_power_dict[x]['power_type'] == 'boost':
+                        del current_minor_power_dict[x]
+        loops -= 1
+
+
+
+# start checking for archery or sorcery and build in those optinos
+# use the code below, it's pretty brillian if I don't say so myself :)
 
 
 
@@ -194,12 +245,7 @@ for arch in mutable_archetype_list:
 
 
 
-
-
-
-
-
-
+print(5 * '\n')
 logging.debug(pprint.pformat(hero))
 
 
@@ -216,13 +262,6 @@ logging.debug(pprint.pformat(hero))
 
 # -----------------------Massive section to see if there are additional powers attached to major power
 
-def minor_power_chooser(arch, min_p):
-    minor_power_options = []
-    for x in arch['minor_p_list']:     # create list of minor power options
-        for y in min_p:
-            if x == y['power_name']:
-                minor_power_options.append(y)
-    return minor_power_options
 
 
 def choose_minor_power_from_list(options, cycles):
