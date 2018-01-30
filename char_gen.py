@@ -52,7 +52,8 @@ hero = {
   'hero_type': 'Standard',
   'hero_archetype_list': [],
   'hero_major_power_list': [],
-  'hero_minor_power_list': []
+  'hero_minor_power_list': [],
+  'hero_backgrounds': []
 }
 
 new_arch_dict = {}
@@ -262,6 +263,19 @@ for arch in mutable_archetype_list:
 
 # begin regular minor power choices---------------------------------------------
 
+    if hero['hero_type'] == 'Super':
+        print('As a character with the Archetype of Super, you have the option of exchanging two of your Archetyp Minor Powers for a Minor Power from any Archetype.')
+        extra_choice = input('Would you like to do this?  y/n \n')
+        if extra_choice == 'y':
+            current_minor_power, current_minor_power_dict = choose_power(min_power_dict, 'Bonus Power')
+            # adjust stats based on major power choosen
+            hero = hero_stat_adjust(hero,current_minor_power['stat_changes'])
+            # Add notes from Major Power
+            hero['hero_notes'].extend(current_minor_power['notes'])
+            # add to list of minor powers
+            hero['hero_minor_power_list'].insert(0, current_minor_power)
+            hero['super_archetype_bonus'] = 'yes'
+
     current_minor_power_dict = {}
     for x in min_power_dict:
         for y in arch['minor_p_list']:
@@ -269,6 +283,10 @@ for arch in mutable_archetype_list:
                 current_minor_power_dict[x] = min_power_dict[x].copy()
             elif min_power_dict[x]['power_type'] == 'boost':
                 current_minor_power_dict[x] = min_power_dict[x].copy()
+
+
+
+
 
     # remove current minor powers from list for powerhouse archetype second group of minor power Choices
     if hero['hero_minor_power_list'] is not []:
@@ -281,11 +299,12 @@ for arch in mutable_archetype_list:
     loops = arch['min_p_num']
     # add two minor powers to super archetypes powers, and two boost options
     if hero['hero_type'] == 'Super':
-        loops = loops + 2
+        if 'super_archetype_bonus' not in hero:
+            loops = loops + 2
         boost_loops = 2
     while loops > 0:
         print(5 * '\n')
-        print('\nYou may now choose ', str(loops), 'minor powers from the following list: \n' )
+        print('\nYou may now choose ', str(loops), ' minor powers from the following list: \n' )
         current_minor_power, current_minor_power_dict = choose_power(current_minor_power_dict, 'Minor Power')
         # adjust stats based on major power choosen
         hero = hero_stat_adjust(hero,current_minor_power['stat_changes'])
@@ -302,7 +321,19 @@ for arch in mutable_archetype_list:
                         del current_minor_power_dict[x]
         loops -= 1
 
-
+# choose a couple of backgrounds for your character
+loops = 2
+backgrounds = ['Alien/Dimensional', 'Arcane', 'Art', 'Athletics', 'Blue Collar', 'Business', 'Criminal', 'Espionage', 'Exploration', 'High Society', 'Journalist', 'Medicine', 'Military', 'Monarch', 'Performance', 'Public', 'Safety', 'Science', 'Social Science']
+while loops > 0:
+    print(5 * '\n')
+    print('\nYou may now choose ', str(loops), ' backgrounds from the following list: \n' )
+    for i,v in enumerate(backgrounds):
+        print(i, ' - ', backgrounds[i])
+    background_choice = int(input('Choose the number of the background you would like: \n'))
+    current_background = backgrounds.pop(background_choice)
+    # Add notes from Major Power
+    hero['hero_backgrounds'].append(current_background)
+    loops -= 1
 
 
 

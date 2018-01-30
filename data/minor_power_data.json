@@ -20,6 +20,13 @@
     "stat_changes": {},
     "notes": ["Damage Field - Spend a free action to activate or deactivate this power. You surround yourself with a deadly field. Anyone touching you (successful attacks or knockbacks) suffers a 4D[1] Body damage attack. No knockback. Resolve this after resolving any successful attack action."]
   },
+  "Density_Decrease": {
+    "power_name": "Density Decrease",
+    "power_type": "minor",
+    "description": "With a thought you become ghostly",
+    "stat_changes": {},
+    "notes": ["Density Decrease - Free action to activate this power with a 1+ Chance roll. At the start of each turn, spend a free action and make a 1+ chance roll to maintain your ghostly form.","While insubstantial you are immune to any Body damage attacks or grapples. You can also pass through any terrain obstacles as if they were open ground, but you must end your turn on clear terrain." ]
+  },
   "Density_Increase": {
     "power_name": "Density Increase",
     "power_type": "minor",
@@ -91,6 +98,13 @@
       "psyche_defence": 1
     },
     "notes": ["Iron Will - You can resist the effects of mental powers better than most! Gain +1D to your defense checks against any Psyche based mental attack. Also gain +1D on all KO checks."]
+  },
+  "Jinx": {
+    "power_name": "Jinx",
+    "power_type": "minor",
+    "description": "You can curse others with bad luck!",
+    "stat_changes": {},
+    "notes": ["Jinx - Make a 5D, 15in ranged Psyche attack. If you win, then he will have the TNs for all rolls on his next turn increased by one. Also, any movement actions taken will require a TN3 check, with one Body lost per goal missed"]
   },
   "Leaping": {
     "power_name": "Leaping",
@@ -167,6 +181,13 @@
     "stat_changes": {},
     "notes": ["Rapport - Choose a team mate, so long as both characters are not KO'ed, they can share +1D between them for any defense checks. As soon as once charter uses the +1D, it is spent until the beginning of the next round."]
   },
+  "Reflection": {
+    "power_name": "Reflection",
+    "power_type": "minor",
+    "description": "Reflection - You can sometimes turn Body-damaging attacks back on your attacker! Anytime you successfully defend against a Body-damaging attack you can choose to make a Chance roll. On a 2+, your attacker suffers 2 Body damage.",
+    "stat_changes": {},
+    "notes": ["Anytime you successfully defend against a Body-damaging attack you can choose to make a Chance roll. On a 2+, your attacker suffers 2 Body damage."]
+  },
   "Regen": {
     "power_name": "Regen",
     "power_type": "minor",
@@ -183,13 +204,6 @@
       "ranged_defence": 1
     },
     "notes": ["Resistance - +1D on KO checks"]
-  },
-  "Reflection": {
-    "power_name": "Reflection",
-    "power_type": "minor",
-    "description": "Reflection - You can sometimes turn Body-damaging attacks back on your attacker! Anytime you successfully defend against a Body-damaging attack you can choose to make a Chance roll. On a 2+, your attacker suffers 2 Body damage.",
-    "stat_changes": {},
-    "notes": ["Anytime you successfully defend against a Body-damaging attack you can choose to make a Chance roll. On a 2+, your attacker suffers 2 Body damage."]
   },
   "Savant": {
     "power_name": "Savant",
@@ -225,6 +239,13 @@
     "description": "Body or Psyche based attack. Decide which when you acquire this power. Stun is a 5D, 15in ranged attack that inflicts no damage, but rather impairs a target's actions for a certain period of time.",
     "stat_changes": {},
     "notes": ["Stun - Body or Psyche based attack. 5D, 15in ranged attack that inflicts stun."]
+  },
+  "Summoning": {
+    "power_name": "Summoning",
+    "power_type": "minor",
+    "description": "You can use a special action to summon beings to fight for you and your team! The type of being or creature you summon is based on its diffculty to summon.",
+    "stat_changes": {},
+    "notes": ["Summoning - (Recharge 2+) Roll 4D and check your goals: ", "\t3 goals = Body 4, Psyche 4, Move 5in, 1 minor power", "\t4 goals = Body 5, Psyche 5, Move 6in, 1 minor power", "\t5+ goals = Body 6, Psyche 6, Move 7in, 1 minor power","\tAlternately, on a 4+ you can choose to summon a henchmen group with one minor power.", "Summoned models show up within 10in of you. Summoned characters may not possess the Magical Artifact or Summoning powers. Those summoned move and act on your activation, and may act the turn they arrive."]
   },
   "Super-Agility": {
     "power_name": "Super-Agility",

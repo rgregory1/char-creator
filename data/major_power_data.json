@@ -98,6 +98,14 @@
       "Sorcery - (Recharge 2+) You can access two powers from your grimoire each turn, but you must follow the normal rules for activating each power. Once you use one of these powers during a game, note it. You cannot use it again unless you make a 2+ Recharge roll for it. Any power you activate lasts until the beginning of your next turn.",
       "Sorcery - If a power in your grimoire has two Recharge rolls, one for Sorcery and one for the power itself, always use the harder of the two rolls to see if the power returns for use. Any power that also possesses some ability to push or extend its capabil- ities is +1 harder to Recharge with Sorcery."]
   },
+  "Speed": {
+    "power_name": "Speed",
+    "power_type": "major",
+    "description": "",
+    "stat_changes": {},
+    "notes": [
+      "Speed - "]
+  },
   "Super-Strength": {
     "power_name": "Super-Strength",
     "power_type": "major",

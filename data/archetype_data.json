@@ -161,6 +161,29 @@
       "Teleport"
     ]
   },
+  "Speedster": {
+    "archetype": "Speedster",
+    "power_name": "Speedster",
+    "power_type": "Standard",
+    "description": "",
+    "move": 40,
+    "body_points": 6,
+    "psych_points": 6,
+    "maj-p": [
+      "Speed"
+    ],
+    "min_p_num": 2,
+    "minor_p_list": [
+      "Density_Decrease",
+      "Iron_Will",
+      "Melee_Specialist",
+      "Reflection",
+      "Resistance",
+      "Savant",
+      "Stun",
+      "Super-Agility"
+    ]
+  },
   "Powerhouse": {
     "archetype": "Powerhouse",
     "power_name": "Powerhouse",
