@@ -25,7 +25,10 @@
     "power_type": "minor",
     "description": "With a thought you become ghostly",
     "stat_changes": {},
-    "notes": ["Density Decrease - Free action to activate this power with a 1+ Chance roll. At the start of each turn, spend a free action and make a 1+ chance roll to maintain your ghostly form.","While insubstantial you are immune to any Body damage attacks or grapples. You can also pass through any terrain obstacles as if they were open ground, but you must end your turn on clear terrain." ]
+    "notes": [
+      "Density Decrease - Free action to activate this power with a 1+ Chance roll. At the start of each turn, spend a free action and make a 1+ chance roll to maintain your ghostly form.",
+      "Density Decrease - While insubstantial you are immune to any Body damage attacks or grapples. You can also pass through any terrain obstacles as if they were open ground, but you must end your turn on clear terrain.",
+      "Density Decrease - Ghostly Attack: While this power is active and you are in melee contact with a foe, spend your combat action and make a 1+ Chance roll; on a success your foe suffers the loss of one Body damage. Armor has no effect on this power."]
   },
   "Density_Increase": {
     "power_name": "Density Increase",
@@ -245,7 +248,13 @@
     "power_type": "minor",
     "description": "You can use a special action to summon beings to fight for you and your team! The type of being or creature you summon is based on its diffculty to summon.",
     "stat_changes": {},
-    "notes": ["Summoning - (Recharge 2+) Roll 4D and check your goals: ", "\t3 goals = Body 4, Psyche 4, Move 5in, 1 minor power", "\t4 goals = Body 5, Psyche 5, Move 6in, 1 minor power", "\t5+ goals = Body 6, Psyche 6, Move 7in, 1 minor power","\tAlternately, on a 4+ you can choose to summon a henchmen group with one minor power.", "Summoned models show up within 10in of you. Summoned characters may not possess the Magical Artifact or Summoning powers. Those summoned move and act on your activation, and may act the turn they arrive."]
+    "notes": [
+      "Summoning - (Recharge 2+) Roll 4D and check your goals: ",
+      "\t3 goals = Body 4, Psyche 4, Move 5in, 1 minor power",
+      "\t4 goals = Body 5, Psyche 5, Move 6in, 1 minor power",
+      "\t5+ goals = Body 6, Psyche 6, Move 7in, 1 minor power",
+      "\tAlternately, on a 4+ you can choose to summon a henchmen group with one minor power.",
+      "Summoned models show up within 10in of you. Summoned characters may not possess the Magical Artifact or Summoning powers. Those summoned move and act on your activation, and may act the turn they arrive."]
   },
   "Super-Agility": {
     "power_name": "Super-Agility",
