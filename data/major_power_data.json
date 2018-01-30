@@ -13,7 +13,7 @@
       "Super-Agility"
     ],
     "additional_power_prefix": "Trick Arrow",
-    "add_p_num": 4,
+    "add_minor_powers_number": 4,
     "stat_changes": {
       "ranged_attack": 1,
       "ranged_attack_rr": 1
@@ -43,7 +43,8 @@
     "description": "You possess brain burning, mind-controlling mental powers!",
     "stat_changes": {},
     "notes": [
-      "Mentalism - Mental Blast - This 15in range, 6D attack does Psyche damage. This attack cannot be used in melee.  \n Mentailism - Mind Control (Recharge 2+) -  Roll 6D, 15in range. No damage, but the target immediately activates under your control and may take a free action and either a move, attack, charge, or special action."]
+      "Mentalism - Mental Blast - This 15in range, 6D attack does Psyche damage. This attack cannot be used in melee.",
+      "Mentailism - Mind Control (Recharge 2+) -  Roll 6D, 15in range. No damage, but the target immediately activates under your control and may take a free action and either a move, attack, charge, or special action."]
   },
   "Metamorph": {
     "power_name": "Metamorph",
@@ -83,24 +84,19 @@
   "Sorcery": {
     "power_name": "Sorcery",
     "power_type": "major",
-    "description": "You're a resourceful, tenacious close-in fighter.  You possess the following abilities: +1D on melee attack rolls, +1D on melee defence rolls, reduce an melee gang-up bonus foes gain against you by -1D, and Counterattack: You posses the Reflection minor power limited to melee attacks.",
-    "additional_minor_powers": [
-      "Entangle",
-      "Leaping",
-      "Melee_Specialist",
-      "Obscurement",
-      "Sonic_Blasts",
-      "Stun",
-      "Super-Agility"
+    "description": "Your knowledge of the arcane arts makes you a dangerous and versatile foe.",
+    "additional_minor_powers": [],
+    "additional_minor_power_restrictions": [
+      "Magic_Artifact",
+      "Shield"
     ],
     "additional_power_prefix": "Grimoire",
-    "add_p_num": 4,
-    "stat_changes": {
-      "melee_attack": 1,
-      "melee_defence": 1
-    },
+    "add_major_powers_number": 1,
+    "add_minor_powers_number": 4,
+    "stat_changes": {},
     "notes": [
-      "Sorcery - (Recharge 2+)"]
+      "Sorcery - (Recharge 2+) You can access two powers from your grimoire each turn, but you must follow the normal rules for activating each power. Once you use one of these powers during a game, note it. You cannot use it again unless you make a 2+ Recharge roll for it. Any power you activate lasts until the beginning of your next turn.",
+      "Sorcery - If a power in your grimoire has two Recharge rolls, one for Sorcery and one for the power itself, always use the harder of the two rolls to see if the power returns for use. Any power that also possesses some ability to push or extend its capabil- ities is +1 harder to Recharge with Sorcery."]
   },
   "Super-Strength": {
     "power_name": "Super-Strength",

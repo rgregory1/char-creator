@@ -5,7 +5,7 @@ logging.basicConfig(level=logging.DEBUG)
 # logging.disable(logging.CRITICAL)
 from print_character import *
 import time
-
+import copy
 
 # grab info from JSON file and assign it to a variable -----------------------
 
@@ -102,6 +102,20 @@ def hero_stat_adjust(base,adjusts):
         base[key] = base.get(key, 4) + adjusts[key]
     return base
 
+def add_power_perfix(prefix, power_dict):
+    """takes in a dictionary and adds prefixes for archery and sorcery """
+    for a in power_dict:
+        power_dict[a]['power_name'] = prefix + ' - ' + power_dict[a]['power_name']
+        for b in power_dict[a]['notes']:
+            power_dict[a]['notes'][b] = prefix + ' - ' + power_dict[a]['notes'][b]
+
+def prefix_additional_powers(current_power, prefix):
+    """ adds addional power prefixes to powers after they have been selected """
+    current_power['power_name'] = prefix + ' - ' + current_power['power_name']
+    for i in range(len(current_power['notes'])):
+        current_power['notes'][i] = prefix + ' - ' + current_power['notes'][i]
+    return current_power
+
 # begin building hero ----------------------------------------------------------
 
 # Pick a name for the hero and add it to the hero dictionary
@@ -189,10 +203,64 @@ for arch in mutable_archetype_list:
     # Add notes from Major Power
     hero['hero_notes'].extend(current_major_power['notes'])
 
-    # print('current major power is:')
-    # print(arch)
-    # begin minor power Choices ------------------------------------------------
+    #check to see if Sorcery is the main power, if so, choose a sorcery major power for the grimoire
+    if current_major_power['power_name'] == 'Sorcery':
+        #create list of major powers to choose from
+        sorcery_maj_power_dict = copy.deepcopy(maj_power_dict)
+        del sorcery_maj_power_dict['Sorcery']
 
+        # create a chooser for sorcery stuff
+        print('\nYou may now choose a Major Power for your Grimoire from the following list: \n' )
+        current_major_sorcery_grimoire, current_minor_power_dict = choose_power(sorcery_maj_power_dict, 'Grimoire')
+
+        current_major_sorcery_grimoire['power_name'] = 'Grimoire - ' + current_major_sorcery_grimoire['power_name']
+        for i in range(len(current_major_sorcery_grimoire['notes'])):
+            current_major_sorcery_grimoire['notes'][i] = 'Grimoire - ' + current_major_sorcery_grimoire['notes'][i]
+
+        pprint.pprint(current_major_sorcery_grimoire)
+
+        hero['hero_major_power_list'].append(current_major_sorcery_grimoire)
+
+        # Add notes from Major Power
+        hero['hero_notes'].extend(current_major_sorcery_grimoire['notes'])
+
+
+    # begin minor power Choices  starting with Archery and Sorcery------------------------------------------------
+
+    if 'add_minor_powers_number' in current_major_power:
+        # create a list of minor powers for trick arrows
+        if current_major_power['power_name'] == 'Archery':
+            current_minor_power_dict = {}
+            for x in min_power_dict:
+                for y in current_major_power['additional_minor_powers']:
+                    if x == y:
+                        current_minor_power_dict[x] = min_power_dict[x].copy()
+        if current_major_power['power_name'] == 'Sorcery':
+            current_minor_power_dict = copy.deepcopy(min_power_dict)
+            del current_minor_power_dict['Magic_Artifact']
+            del current_minor_power_dict['Shield']
+
+        # Set number of loops
+        loops = current_major_power['add_minor_powers_number']
+
+        # Add additional minor power to hero dict with each pass
+        while loops > 0:
+            print(5 * '\n')
+            print('\nYou may now choose ', str(loops), 'minor powers from the following list to add to your ', current_major_power['additional_power_prefix'], ': \n' )
+            current_minor_power, current_minor_power_dict = choose_power(current_minor_power_dict, current_major_power['additional_power_prefix'])
+            # Add prefix to power
+            current_minor_power = prefix_additional_powers(current_minor_power, current_major_power['additional_power_prefix'])
+
+            # Add notes from Major Power
+            hero['hero_notes'].extend(current_minor_power['notes'])
+            # add to list of minor powers
+            hero['hero_minor_power_list'].append(current_minor_power)
+            # remove boosts from chooses once one is choosen (or two for supers)
+
+            loops -= 1
+
+
+# begin regular minor power choices---------------------------------------------
 
     current_minor_power_dict = {}
     for x in min_power_dict:
@@ -218,7 +286,7 @@ for arch in mutable_archetype_list:
     while loops > 0:
         print(5 * '\n')
         print('\nYou may now choose ', str(loops), 'minor powers from the following list: \n' )
-        current_minor_power, current_minor_power_dict = choose_power(current_minor_power_dict, 'minor power')
+        current_minor_power, current_minor_power_dict = choose_power(current_minor_power_dict, 'Minor Power')
         # adjust stats based on major power choosen
         hero = hero_stat_adjust(hero,current_minor_power['stat_changes'])
         # Add notes from Major Power
@@ -236,9 +304,6 @@ for arch in mutable_archetype_list:
 
 
 
-# start checking for archery or sorcery and build in those optinos
-# use the code below, it's pretty brillian if I don't say so myself :)
-
 
 
 
@@ -247,120 +312,3 @@ for arch in mutable_archetype_list:
 
 print(5 * '\n')
 logging.debug(pprint.pformat(hero))
-
-
-
-
-
-
-
-
-
-
-
-
-
-# -----------------------Massive section to see if there are additional powers attached to major power
-
-
-
-def choose_minor_power_from_list(options, cycles):
-    active_minor_power = ''
-    minor_p_choice = ''
-    minor_p_choice_num = ''
-    print('Minor Power Choices \t \t Description \n')
-    for n,z in enumerate(options):
-        print(n, ' - ', z['power_name'], '\t', z['description'], '\n')  # print powers to choose from
-
-    print('You have', cycles, 'minor power choices remaining.')  # show number of powers remaining
-    print()
-
-    minor_p_choice_num = input('Please type the number of the minor power you would like: \n')  # choose power
-
-    minor_p_choice = options[int(minor_p_choice_num)]['power_name']
-
-    for c in options:
-        if minor_p_choice == c['power_name']:    # attach power dict to active power
-            active_minor_power = c.copy()
-
-    for d in options:
-        if minor_p_choice == d['power_name']:   # remove power from list for future choices
-            options.remove(d)
-    return active_minor_power, options
-
-
-
-
-# check for Archery Major power, if so, choose four additional minor powers
-
-
-
-def additional_minor_power_chooser(arch, min_p):
-    minor_power_options = []
-    for x in arch['additional_minorp']:     # create list of minor power options
-        for y in min_p:
-            if x == y['power_name']:
-                y['power_name'] = arch['additional_minorp_prefix'] + ' - ' + y['power_name']
-                y['notes'] = arch['additional_minorp_prefix'] + ' - ' + y['notes']
-                minor_power_options.append(y)
-    return minor_power_options
-
-
-if 'additional_minorp' in active_majp:
-    add_minor_p_cycles = active_majp['add_p_num']
-    print('The ' + active_majp['power_name'] + ' Major Power has ' + str(add_minor_p_cycles) + ' additional minor powers')
-    list_of_additional_minorp_options = additional_minor_power_chooser(active_majp, minp_list_of)
-    while add_minor_p_cycles > 0:
-        this_minor_p_choice, list_of_minorp_options = choose_minor_power_from_list(list_of_additional_minorp_options,
-                                                                                   add_minor_p_cycles)
-
-        print('this_minor_p_choice', this_minor_p_choice)  # test to see if correct
-
-        print('minp_list_of', minp_list_of)
-
-        # Pull out adjustments from minor power dict
-        active_minp_adjust = grab_minp_stat_changes(minp_list_of, this_minor_p_choice)
-
-        print('active minor power adjust is', active_minp_adjust)
-
-        # Adjust stats acording to major power
-        hero = hero_stat_adjust(hero, active_minp_adjust)
-
-        hero['hero_notes'] = hero['hero_notes'] + this_minor_p_choice['notes']
-
-        add_minor_p_cycles -= 1
-    # pprint.pprint(list_of_additional_minorp_options)
-
-
-# ------------------------- choose minor powers from a list ----------------------------
-
-
-
-
-minor_power_cycles = active_arch['min_p_num']
-list_of_minorp_options = minor_power_chooser(active_arch, minp_list_of)
-while minor_power_cycles > 0:
-    this_minor_p_choice, list_of_minorp_options = choose_minor_power_from_list(list_of_minorp_options,minor_power_cycles)
-
-    # print('this_minor_p_choice', this_minor_p_choice) # test to see if correct
-
-    # print('minp_list_of', minp_list_of)
-    pprint.pprint(hero)
-    # Pull out adjustments from minor power dict
-    active_minp_adjust = grab_minp_stat_changes(minp_list_of, this_minor_p_choice)
-
-    print('active minor power adjust is', active_minp_adjust)
-
-    # Adjust stats acording to major power
-    hero = hero_stat_adjust(hero, active_minp_adjust)
-
-    hero['hero_notes'] = hero['hero_notes'] + this_minor_p_choice['notes']
-
-    minor_power_cycles -= 1
-
-# end of new code
-
-pprint.pprint(hero)
-
-
-print_out_hero(hero)
