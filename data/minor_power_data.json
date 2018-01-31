@@ -1,4 +1,17 @@
 {
+  "Amphibious": {
+    "power_name": "Amphibious",
+    "power_type": "minor",
+    "description": "You’re equally at home in water or on the land.",
+    "stat_changes": {
+      "melee_defence_rr": 1,
+      "ranged_defence_rr": 1,
+      "move": 2
+    },
+    "notes": [
+      "Amphibious - Ignore the effects of Dif cult terrain that is defined as deep water",
+      "Amphivious - You also gain +1D[1] for melee attack and defense rolls against non-Amphibious foes when you are both in deep or hazardous water."]
+  },
   "Armor": {
     "power_name": "Armor",
     "power_type": "minor",
@@ -6,19 +19,41 @@
     "stat_changes": {},
     "notes": ["Armor - Ignore the first lost Body damage from each attack. No knockback unless foe possess Super-Strength."]
   },
+  "Barrier": {
+    "power_name": "Barrier",
+    "power_type": "minor",
+    "description": "You can create barriers on the battlefield.",
+    "stat_changes": {},
+    "notes": [
+      "Barrier - (Recharge 2+) Use a special action to create a TN3 (Body 4), 3in long × 2in tall × 1in thick barrier on the battle field. Make a standard 4D check when you create your barrier. Each goal you score can add 1in to the barrier width and height.",
+      "Barrier - Place it up to 10” away from you. Place on solid ground, or anchored between two solid objects. You can stack barriers on top of each other, or one behind the other. Remove a barrier from play by simply spending a free action."]
+  },
   "Burrowing": {
     "power_name": "Burrowing",
     "power_type": "minor",
     "description": "You can travel underground at your normal Move rate.",
     "stat_changes": {},
-    "notes": ["Burrowing - It costs a free action to submerge and start burrowing, or stop burrowing and re-surface, but once you have surfaced, you cannot burrow again until next turn. You can burrow through or under any intervening terrain as if it were normal ground. You cannot resurface within a solid object. Instead of attacking when you surface, you can create fissures and tremors. Use your special action to create these tremors; any enemies within 5in of you must make a TN3 check or be knocked down."]
+    "notes": [
+      "Burrowing - It costs a free action to submerge and start burrowing, or stop burrowing and re-surface, but once you have surfaced, you cannot burrow again until next turn. You can burrow through or under any intervening terrain as if it were normal ground. You cannot resurface within a solid object. Instead of attacking when you surface, you can create fissures and tremors. Use your special action to create these tremors; any enemies within 5in of you must make a TN3 check or be knocked down."]
+  },
+  "Construct": {
+    "power_name": "Construct",
+    "power_type": "minor",
+    "description": "You’re an android, robot, golem, or some other artificial being! ",
+    "stat_changes": {
+      "psyche_defence_rr": 1
+    },
+    "notes": [
+      "Construct - Select either +1 Body or +2in Move to better reflect your inhuman physiology."]
   },
   "Damage_Field": {
     "power_name": "Damage Field",
     "power_type": "minor",
     "description": "Spend a free action to activate or deactivate this power. You surround yourself with a deadly field. Anyone touching you (successful attacks or knockbacks) suffers a 4D[1] Body damage attack. No knockback. Resolve this after resolving any successful attack action.",
     "stat_changes": {},
-    "notes": ["Damage Field - Spend a free action to activate or deactivate this power. You surround yourself with a deadly field. Anyone touching you (successful attacks or knockbacks) suffers a 4D[1] Body damage attack. No knockback. Resolve this after resolving any successful attack action."]
+    "notes": [
+      "Damage Field - Spend a free action to activate or deactivate this power. You surround yourself with a deadly field. Anyone touching you (successful attacks or knockbacks) suffers a 4D[1] Body damage attack. No knockback. Resolve this after resolving any successful attack action.",
+      "Damage Field - Push it: (Recharge 2+) Push It: Anytime you activate your damage field you can declare that you are pushing its power--the field increases to 6D[1] until the beginning of your next turn, then shuts down."]
   },
   "Density_Decrease": {
     "power_name": "Density Decrease",
@@ -36,6 +71,22 @@
     "description": "With a thought you become super-dense.",
     "stat_changes": {},
     "notes": ["Density Increase - At the start of your turn, before any movement, spend a free action to activate. While active, you can charge at your base Move value only. While super dense you gain +1 Re-roll on melee attack checks and +1D to melee and ranged defense checks against Body damaging attacks. You are also immune to all knockback."]
+  },
+  "Dispel": {
+    "power_name": "Dispel",
+    "power_type": "minor",
+    "description": "You can nullify your opponent’s powers or power effects.",
+    "stat_changes": {},
+    "notes": ["Dispel - Spend a combat action against a single foe in melee or up to 5in away and make a 5D opposed Psyche attack. This does no damage. On a success, each goal you win by cancels one of the target’s powers or boosts of your choice (major powers require 2 goals). Your opponent loses access to the power(s) you choose to cancel until the start of your next turn."]
+  },
+  "Duplicate": {
+    "power_name": "Duplicate",
+    "power_type": "minor",
+    "description": "You can use a special action to create a copy of yourself!",
+    "stat_changes": {},
+    "notes": [
+      "Duplicate - (Recharge 2+) This copy possesses all your powers (except Duplicate) and Move, but a base Body and Psyche of one(1). Your copy appears within 5in, and can act the turn you bring him into play.",
+      "Duplicate - Copy auto-fails any KO checks. Your duplicates act on your initiative (either before or after you). When a duplicate suffers a KO, make a TN2 check. If you fail, suffer 1 Psyche damage. If you’re KO’ed, remove your duplicates from play."]
   },
   "Enhance_(Minor)": {
     "power_name": "Enhance (Minor)",

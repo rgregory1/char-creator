@@ -179,86 +179,87 @@ if len(mutable_archetype_list) == 3:
 
 for arch in mutable_archetype_list:
     # check if only one major power available, if so set it to current
-    if len(arch['maj-p']) == 1:
-        print('\n')
-        print('Your Major Power is ' + str(arch['maj-p'][0]) + '\n \n')
-        majp_choice = arch['maj-p'][0]
-    else:
-        # if choice of major power exists, print list to choose from and a set choice to current
-        for n, a in enumerate(arch['maj-p']):
-            print(n, ' - ', arch['maj-p'][n])
-        majp_choice_num = input('Type the number of the Major Power you Choose: \n')
-        majp_choice = arch['maj-p'][int(majp_choice_num)]
+    if arch['maj-p'] is True:
+        if len(arch['maj-p']) == 1:
+            print('\n')
+            print('Your Major Power is ' + str(arch['maj-p'][0]) + '\n \n')
+            majp_choice = arch['maj-p'][0]
+        else:
+            # if choice of major power exists, print list to choose from and a set choice to current
+            for n, a in enumerate(arch['maj-p']):
+                print(n, ' - ', arch['maj-p'][n])
+            majp_choice_num = input('Type the number of the Major Power you Choose: \n')
+            majp_choice = arch['maj-p'][int(majp_choice_num)]
 
-    for majorpower in maj_power_dict:
-        if majp_choice == maj_power_dict[majorpower]['power_name']:
-            current_major_power = maj_power_dict[majorpower].copy()
-            break
-    # print()
-    # print(current_major_power)
-    # print()
-    # assign major power choice to the hero dict
-    hero['hero_major_power_list'].insert(0, current_major_power)
-    # adjust stats based on major power choosen
-    hero = hero_stat_adjust(hero,current_major_power['stat_changes'])
-    # Add notes from Major Power
-    hero['hero_notes'].extend(current_major_power['notes'])
-
-    #check to see if Sorcery is the main power, if so, choose a sorcery major power for the grimoire
-    if current_major_power['power_name'] == 'Sorcery':
-        #create list of major powers to choose from
-        sorcery_maj_power_dict = copy.deepcopy(maj_power_dict)
-        del sorcery_maj_power_dict['Sorcery']
-
-        # create a chooser for sorcery stuff
-        print('\nYou may now choose a Major Power for your Grimoire from the following list: \n' )
-        current_major_sorcery_grimoire, current_minor_power_dict = choose_power(sorcery_maj_power_dict, 'Grimoire')
-
-        current_major_sorcery_grimoire['power_name'] = 'Grimoire - ' + current_major_sorcery_grimoire['power_name']
-        for i in range(len(current_major_sorcery_grimoire['notes'])):
-            current_major_sorcery_grimoire['notes'][i] = 'Grimoire - ' + current_major_sorcery_grimoire['notes'][i]
-
-        pprint.pprint(current_major_sorcery_grimoire)
-
-        hero['hero_major_power_list'].append(current_major_sorcery_grimoire)
-
+        for majorpower in maj_power_dict:
+            if majp_choice == maj_power_dict[majorpower]['power_name']:
+                current_major_power = maj_power_dict[majorpower].copy()
+                break
+        # print()
+        # print(current_major_power)
+        # print()
+        # assign major power choice to the hero dict
+        hero['hero_major_power_list'].insert(0, current_major_power)
+        # adjust stats based on major power choosen
+        hero = hero_stat_adjust(hero,current_major_power['stat_changes'])
         # Add notes from Major Power
-        hero['hero_notes'].extend(current_major_sorcery_grimoire['notes'])
+        hero['hero_notes'].extend(current_major_power['notes'])
 
-
-    # begin minor power Choices  starting with Archery and Sorcery------------------------------------------------
-
-    if 'add_minor_powers_number' in current_major_power:
-        # create a list of minor powers for trick arrows
-        if current_major_power['power_name'] == 'Archery':
-            current_minor_power_dict = {}
-            for x in min_power_dict:
-                for y in current_major_power['additional_minor_powers']:
-                    if x == y:
-                        current_minor_power_dict[x] = min_power_dict[x].copy()
+        #check to see if Sorcery is the main power, if so, choose a sorcery major power for the grimoire
         if current_major_power['power_name'] == 'Sorcery':
-            current_minor_power_dict = copy.deepcopy(min_power_dict)
-            del current_minor_power_dict['Magic_Artifact']
-            del current_minor_power_dict['Shield']
+            #create list of major powers to choose from
+            sorcery_maj_power_dict = copy.deepcopy(maj_power_dict)
+            del sorcery_maj_power_dict['Sorcery']
 
-        # Set number of loops
-        loops = current_major_power['add_minor_powers_number']
+            # create a chooser for sorcery stuff
+            print('\nYou may now choose a Major Power for your Grimoire from the following list: \n' )
+            current_major_sorcery_grimoire, current_minor_power_dict = choose_power(sorcery_maj_power_dict, 'Grimoire')
 
-        # Add additional minor power to hero dict with each pass
-        while loops > 0:
-            print(5 * '\n')
-            print('\nYou may now choose ', str(loops), 'minor powers from the following list to add to your ', current_major_power['additional_power_prefix'], ': \n' )
-            current_minor_power, current_minor_power_dict = choose_power(current_minor_power_dict, current_major_power['additional_power_prefix'])
-            # Add prefix to power
-            current_minor_power = prefix_additional_powers(current_minor_power, current_major_power['additional_power_prefix'])
+            current_major_sorcery_grimoire['power_name'] = 'Grimoire - ' + current_major_sorcery_grimoire['power_name']
+            for i in range(len(current_major_sorcery_grimoire['notes'])):
+                current_major_sorcery_grimoire['notes'][i] = 'Grimoire - ' + current_major_sorcery_grimoire['notes'][i]
+
+            pprint.pprint(current_major_sorcery_grimoire)
+
+            hero['hero_major_power_list'].append(current_major_sorcery_grimoire)
 
             # Add notes from Major Power
-            hero['hero_notes'].extend(current_minor_power['notes'])
-            # add to list of minor powers
-            hero['hero_minor_power_list'].append(current_minor_power)
-            # remove boosts from chooses once one is choosen (or two for supers)
+            hero['hero_notes'].extend(current_major_sorcery_grimoire['notes'])
 
-            loops -= 1
+
+        # begin minor power Choices  starting with Archery and Sorcery------------------------------------------------
+
+        if 'add_minor_powers_number' in current_major_power:
+            # create a list of minor powers for trick arrows
+            if current_major_power['power_name'] == 'Archery':
+                current_minor_power_dict = {}
+                for x in min_power_dict:
+                    for y in current_major_power['additional_minor_powers']:
+                        if x == y:
+                            current_minor_power_dict[x] = min_power_dict[x].copy()
+            if current_major_power['power_name'] == 'Sorcery':
+                current_minor_power_dict = copy.deepcopy(min_power_dict)
+                del current_minor_power_dict['Magic_Artifact']
+                del current_minor_power_dict['Shield']
+
+            # Set number of loops
+            loops = current_major_power['add_minor_powers_number']
+
+            # Add additional minor power to hero dict with each pass
+            while loops > 0:
+                print(5 * '\n')
+                print('\nYou may now choose ', str(loops), 'minor powers from the following list to add to your ', current_major_power['additional_power_prefix'], ': \n' )
+                current_minor_power, current_minor_power_dict = choose_power(current_minor_power_dict, current_major_power['additional_power_prefix'])
+                # Add prefix to power
+                current_minor_power = prefix_additional_powers(current_minor_power, current_major_power['additional_power_prefix'])
+
+                # Add notes from Major Power
+                hero['hero_notes'].extend(current_minor_power['notes'])
+                # add to list of minor powers
+                hero['hero_minor_power_list'].append(current_minor_power)
+                # remove boosts from chooses once one is choosen (or two for supers)
+
+                loops -= 1
 
 
 # begin regular minor power choices---------------------------------------------
