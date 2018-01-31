@@ -344,3 +344,7 @@ while loops > 0:
 
 print(5 * '\n')
 logging.debug(pprint.pformat(hero))
+
+
+# Construct minor power stat change Choices
+# Everything about Henchmen
