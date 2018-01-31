@@ -237,6 +237,13 @@
     },
     "notes": ["Melee Speicialist - +2D on any checks to break objects or escape entangles."]
   },
+  "Multiple_Limbes": {
+    "power_name": "Multiple Limbs",
+    "power_type": "minor",
+    "description": "You have more limbs than a standard human. This could be a mutation, species trait, or the result of advanced cybernetics or robotics.",
+    "stat_changes": {},
+    "notes": ["Multiple Limbs - (Recharge 2+) You can make an extra melee attack on your turn. If you charge, this second attack does not gain the +1D charge bonus. You can also gain a maximum of 10in of reach with your extra melee attack. These reach attacks are weaker than normal melee attacks. Up to 5in is -1D, while greater than 5in out to 10in is -2D."]
+  },
   "Mimic": {
     "power_name": "Mimic",
     "power_type": "minor",
@@ -252,6 +259,14 @@
     "notes": [
       "Obscurement - (Recharge 1+) Anytime a foe tries to detect you, he must make a TN3 perception check. If failed you get +1 re-roll to Body Damage attacks, +1 re-roll to Body Damage defence, +1 to hide checks.",
       "Obscurement - You can also use a special action and extend your power to another character within 10in. So long as this character remains within 10in of you, he enjoys the benefits of your power. This lasts until the beginning of your next turn and adds +1 difficulty to your Recharge checks."]
+  },
+  "Parasite": {
+    "power_name": "Parasite",
+    "power_type": "minor",
+    "description": "You drain the vital energies of your foes and use them to power and heal yourself!",
+    "stat_changes": {},
+    "notes": [
+      "Parasite - Make a 5D Psyche based attack against a foe in melee contact with you. If you remove at least 1 Psyche damage box, you may heal one of your own missing Body or Psyche damage boxes, or add +1 to your Re-roll pool."]
   },
   "Power_Blasts_(Minor)": {
     "power_name": "Power Blasts (Minor)",
@@ -308,6 +323,24 @@
     "stat_changes": {},
     "notes": ["Savant - You enjoy +1 Re-roll on any checks during a battle that involve non-combat situations. Including initiative, movement, objective, perception, and summoning checks, but not KO checks. At the beginning of each battle, after all models have been placed, but before the first round begins, you may take a non-charge Move action."]
   },
+  "Save": {
+    "power_name": "Save",
+    "power_type": "minor",
+    "description": "You can assist a nearby character as things go bad!",
+    "stat_changes": {},
+    "notes": [
+      "Save - Once per round, as a reaction during another character’s turn, you can cancel or mitigate the effects of knockdown, knockback, and falls on a character within 10in of you.",
+      "Save - You can save yourself as many times as necessary! If you choose it, cancel the effects of a knockdown or knockback on yourself. If you choose it, cancel any falls you suffer, or suffer no damage when you land after falling."]
+  },
+  "Servitor-Sidekick": {
+    "power_name": "Servitor-Sidekick",
+    "power_type": "minor",
+    "description": "You have a servitor or sidekick who sometimes shows up to help out! This might be a young ward, a robot you built, an old Army buddy, or anything else you can think of!",
+    "stat_changes": {},
+    "notes": [
+      "Servitor-Sidekick - Make a 1+ Chance Roll before each battle. If you succeed, you begin the battle with a sidekick or servitor character, otherwise it shows up at the beginning of round 2.",
+      "Servitor-Sidekick - He or she counts as an ally and team member for the battle. The model possesses a single minor power of your choice (excluding the Servitor/Sidekick and Magic Artifact powers), Body 4, Psyche 4, and a Move of 6”."]
+  },
   "Shield": {
     "power_name": "Shield",
     "power_type": "minor",
@@ -318,6 +351,18 @@
       "ranged_defence_rr": 1
     },
     "notes": ["Shield - You can hurl it as a 3D, 5in ranged attack, and it always returns to your hand. Can also ricochet ranged attack to a second target within 5in of you. In this case you make a single attack goal roll, and your targets make separate, +1D defense goal rolls."]
+  },
+  "Shrinking": {
+    "power_name": "Shrinking",
+    "power_type": "minor",
+    "description": "Use a free action and shrink to bug size! You can grow back to normal size as a free action.",
+    "stat_changes": {
+      "pysche_attack": 0,
+      "pysche_attack_rr": 1
+    },
+    "notes": [
+      "Shrinking - Use a free action and shrink to bug size or grow back to normal size. While shrunken: +2D to Hide checks, +1D on defense for Body damaging, Momentum charge: start your charge shrunken and finish it at normal size and in base contact with a foe! Attack that foe at +2D instead of the normal +1D for a charge (Recharge 2+)",
+      "Shrinking - You suffer double knockback while shrunken!"]
   },
   "Sonic_Blasts": {
     "power_name": "Sonic Blasts",
@@ -367,21 +412,24 @@
     "stat_changes": {
       "melee_attack": 1
     },
-    "notes": ["Super-Strength - +1D to entangle escapes, grappling checks, and on breaking objects, +1D on Jumping and Leaping checks, inflict knockback at 2in per body damage"]
+    "notes": [
+      "Super-Strength - +1D to entangle escapes, grappling checks, and on breaking objects, +1D on Jumping and Leaping checks, inflict knockback at 2in per body damage"]
   },
   "Telekinesis": {
     "power_name": "Telekinesis",
     "power_type": "minor",
     "description": "You can move objects with your mind, grapple foes at range, and levitate yourself and others!",
     "stat_changes": {},
-    "notes": ["Telekinesis - As a special or combat action lift, carry, and wield objects up to 15in away as if you had minor Super-Strength--this includes using an object as a super-club! Target must also be within 15in range.', 'Telekinesis - Use a combat action to grapple a foe up to 15in away as if you possessed minor Super-Strength.', 'Telekinesis - On your move action levitate yourself and one friendly character within 15in of you up to 6in, and up to 15in in height. Your friend must remain within your 15in sphere of TK in uence. You and your levitated friend must land at the end of your move."]
+    "notes": [
+      "Telekinesis - As a special or combat action lift, carry, and wield objects up to 15in away as if you had minor Super-Strength--this includes using an object as a super-club! Target must also be within 15in range.', 'Telekinesis - Use a combat action to grapple a foe up to 15in away as if you possessed minor Super-Strength.', 'Telekinesis - On your move action levitate yourself and one friendly character within 15in of you up to 6in, and up to 15in in height. Your friend must remain within your 15in sphere of TK in uence. You and your levitated friend must land at the end of your move."]
   },
   "Teleport": {
     "power_name": "Teleport",
     "power_type": "minor",
     "description": "You can move from one point to another instantaneously!",
     "stat_changes": {},
-    "notes": ["Teleport - Teleporting costs a move action, and when you do so make a goal roll. You move up to 10in + 5in per goal scored. You can move to any point on the board whether you can see it or not. If you teleport out of melee combat, your foe still gets a free attack on you. If you are knocked back from a successful hit, measure your teleport distance from the point where your knockback ends."]
+    "notes": [
+      "Teleport - Teleporting costs a move action, and when you do so make a goal roll. You move up to 10in + 5in per goal scored. You can move to any point on the board whether you can see it or not. If you teleport out of melee combat, your foe still gets a free attack on you. If you are knocked back from a successful hit, measure your teleport distance from the point where your knockback ends."]
   },
   "Clever": {
     "power_name": "Clever",
