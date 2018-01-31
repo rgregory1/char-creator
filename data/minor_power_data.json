@@ -128,7 +128,10 @@
     "power_type": "minor",
     "description": "You wield protective energies. Decide when you acquire this power whether it shields against Body or Psyche damage. Your Force-Field grants you a separate 4D defense goal roll against incoming attacks.",
     "stat_changes": {},
-    "notes": ["Force-Field - (Recharge 2+) Decide when you acquire this power whether it shields against Body or Psyche damage. Your Force-Field grants you a separate 4D defense goal roll against incoming attacks. If an attack gets through, you must make a second defense goal roll against the full incoming attack. You may also protect additional characters within 10in of you. Use a special action and make a 4D check and note your goals - 2 goals = 1 character 3 goals = 2 characters 4 goals = 3 characters. Decide which characters to protect before making your check. Protected characters must remain within 10in of you to enjoy your Force-Fields benefits. Maximum Protection - You can push your Force-Field to its limits, rolling 6D instead of 4D for its protection, but succeed or fail, the power shuts down after this one enhanced use. You must decide to push your field prior to your foes attack goal roll."]
+    "notes": [
+      "Force-Field - (Recharge 2+) Decide when you acquire this power whether it shields against Body or Psyche damage. Your Force-Field grants you a separate 4D defense goal roll against incoming attacks. If an attack gets through, you must make a second defense goal roll against the full incoming attack.",
+      "Force-Field - You may also protect additional characters within 10in of you. Use a special action and make a 4D check and note your goals - 2 goals = 1 character 3 goals = 2 characters 4 goals = 3 characters. Decide which characters to protect before making your check. Protected characters must remain within 10in of you to enjoy your Force-Fields benefits.",
+      "Force-Field - Maximum Protection - You can push your Force-Field to its limits, rolling 6D instead of 4D for its protection, but succeed or fail, the power shuts down after this one enhanced use. You must decide to push your field prior to your foes attack goal roll."]
   },
   "Fortune": {
     "power_name": "Fortune",
@@ -144,6 +147,32 @@
     "stat_changes": {},
     "notes": ["Gadgets - Make a Chance Roll at the start of your turn. The number of goals rolled is the number of Re-rolls added to your Re-roll pool.', 'Gadgets - 3D, 10in Body-damage ranged attack."]
   },
+  "Grenades": {
+    "power_name": "Grenades",
+    "power_type": "minor",
+    "description": "You throw grenades.",
+    "stat_changes": {},
+    "notes": ["Grenades - You possess a 3D, 5in ranged Body attack with a 3in Radius effect. Alternately, before rolling any dice, you can declare you’re throwing a stun grenade. This attack works just like a 3D version of the Stun minor power, but also includes the 3in Radius effect."]
+  },
+  "Growth": {
+    "power_name": "Growth",
+    "power_type": "minor",
+    "description": "You can grow to giant size!",
+    "stat_changes": {},
+    "notes": [
+      "Growth - Use a free action to activate or deactivate your growth at the start of your turn. When active Growth grants you the following:",
+      "Growth - 1) +4in Move and +2in Reach 2) +1D to melee attack rolls 3) attack flying models as if they were on the ground.",
+      "Growth - You’re large enough to serve as a 'mount' for one normal sized or shrunken model. Riders use 1in of their Move value to climb aboard or dismount when in base contact with you.",
+      "Growth - Foes also gain +1D on Body-based ranged attacks against you."]
+  },
+  "Immortal": {
+    "power_name": "Immortal",
+    "power_type": "minor",
+    "description": "You can’t die! While this might sound great, it does have its drawbacks. Counts as TWO minor powers.",
+    "stat_changes": {},
+    "notes": [
+      "Immortal -  You auto-fail all KO checks. When you fail a KO check, miss your next turn. On the following turn, you spring up with all of your Body and Psyche damage restored. If you’re KO’ed again in the battle, you go down again, lose your next turn, and spring back up on the following turn with all damage restored. And so on."]
+  },
   "Iron_Will": {
     "power_name": "Iron Will",
     "power_type": "minor",
@@ -151,14 +180,16 @@
     "stat_changes": {
       "psyche_defence": 1
     },
-    "notes": ["Iron Will - You can resist the effects of mental powers better than most! Gain +1D to your defense checks against any Psyche based mental attack. Also gain +1D on all KO checks."]
+    "notes": [
+      "Iron Will - You can resist the effects of mental powers better than most! Gain +1D to your defense checks against any Psyche based mental attack. Also gain +1D on all KO checks."]
   },
   "Jinx": {
     "power_name": "Jinx",
     "power_type": "minor",
     "description": "You can curse others with bad luck!",
     "stat_changes": {},
-    "notes": ["Jinx - Make a 5D, 15in ranged Psyche attack. If you win, then he will have the TNs for all rolls on his next turn increased by one. Also, any movement actions taken will require a TN3 check, with one Body lost per goal missed"]
+    "notes": [
+      "Jinx - Make a 5D, 15in ranged Psyche attack. If you win, then he will have the TNs for all rolls on his next turn increased by one. Also, any movement actions taken will require a TN3 check, with one Body lost per goal missed"]
   },
   "Leaping": {
     "power_name": "Leaping",

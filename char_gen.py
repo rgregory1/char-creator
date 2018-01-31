@@ -21,6 +21,7 @@ with open('data/archetype_data.json') as f:
 # initiate lists and dicts for later use ---------------------------------------
 
 
+
 Stats = {
   'melee_attack': 4,
   'melee_attack_rr': 0,
@@ -152,7 +153,7 @@ elif hero['hero_archetype_list'][0]['power_type'] == 'Super' or hero['hero_arche
             hero['hero_archetype_list'].append(current_archetype)
             hero = assign_base_points(hero, hero['hero_archetype_list'][1])
         else:
-            # if first arch chose, choos third arch
+            # if first arch chosen, choose third arch
             print('\n \n')
             print('Round two - Due to your intitial Archetype choice of ' + str(hero['hero_archetype_list'][0]['archetype']) + ' you are allowed to choose ' + str(loops) + ' additional archetype/s:')
             current_archetype, new_arch_dict = choose_power(new_arch_dict, 'archetype')
@@ -241,9 +242,10 @@ for arch in mutable_archetype_list:
                 current_minor_power_dict = copy.deepcopy(min_power_dict)
                 del current_minor_power_dict['Magic_Artifact']
                 del current_minor_power_dict['Shield']
-
+                del current_minor_power_dict['Immortal']
             # Set number of loops
             loops = current_major_power['add_minor_powers_number']
+
 
             # Add additional minor power to hero dict with each pass
             while loops > 0:
@@ -268,7 +270,10 @@ for arch in mutable_archetype_list:
         print('As a character with the Archetype of Super, you have the option of exchanging two of your Archetyp Minor Powers for a Minor Power from any Archetype.')
         extra_choice = input('Would you like to do this?  y/n \n')
         if extra_choice == 'y':
-            current_minor_power, current_minor_power_dict = choose_power(min_power_dict, 'Bonus Power')
+            # Remove imortal from dict
+            super_min_power_dict = copy.deepcopy(min_power_dict)
+            del super_min_power_dict['Immortal']
+            current_minor_power, current_minor_power_dict = choose_power(super_min_power_dict, 'Bonus Power')
             # adjust stats based on major power choosen
             hero = hero_stat_adjust(hero,current_minor_power['stat_changes'])
             # Add notes from Major Power
@@ -284,7 +289,8 @@ for arch in mutable_archetype_list:
                 current_minor_power_dict[x] = min_power_dict[x].copy()
             elif min_power_dict[x]['power_type'] == 'boost':
                 current_minor_power_dict[x] = min_power_dict[x].copy()
-
+    if hero['hero_type'] == 'Super' or hero['hero_type'] == 'Powerhouse':
+        del current_minor_power_dict['Immortal']
 
 
 
@@ -321,6 +327,21 @@ for arch in mutable_archetype_list:
                     if current_minor_power_dict[x]['power_type'] == 'boost':
                         del current_minor_power_dict[x]
         loops -= 1
+        # print(current_minor_power)
+        # print('removing a loop')
+        # print(loops)
+        time.sleep(4)
+        # Begin to address Immortal minor power
+        if loops <= 1:
+            if 'Immortal' in current_minor_power_dict:
+                del current_minor_power_dict['Immortal']
+                print('you choose imortal')
+                time.sleep(4)
+        if current_minor_power['power_name'] == 'Immortal':
+            loops -= 1
+            # print('removing a loop because of imortal')
+            # print(loops)
+            # time.sleep(4)
 
 # choose a couple of backgrounds for your character
 loops = 2
@@ -348,3 +369,5 @@ logging.debug(pprint.pformat(hero))
 
 # Construct minor power stat change Choices
 # Everything about Henchmen
+# Growth - Giant Option
+# Immortal, counts as 2x minor, not available to Powerhouse or Super
