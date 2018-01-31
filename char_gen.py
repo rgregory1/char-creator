@@ -370,4 +370,4 @@ logging.debug(pprint.pformat(hero))
 # Construct minor power stat change Choices
 # Everything about Henchmen
 # Growth - Giant Option
-# Immortal, counts as 2x minor, not available to Powerhouse or Super
+# Finish Speed major power

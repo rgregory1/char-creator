@@ -173,6 +173,15 @@
     "notes": [
       "Immortal -  You auto-fail all KO checks. When you fail a KO check, miss your next turn. On the following turn, you spring up with all of your Body and Psyche damage restored. If you’re KO’ed again in the battle, you go down again, lose your next turn, and spring back up on the following turn with all damage restored. And so on."]
   },
+  "Invisibility": {
+    "power_name": "Invisibility",
+    "power_type": "minor",
+    "description": "You can render yourself unseen as a free action.",
+    "stat_changes": {},
+    "notes": [
+      "Invisibility - (Recharge 2+) Anytime a foe tries to detect you, he must make a TN4 perception check. If failed you get +2 re-roll to Body Damage attacks, +2 re-roll to Body Damage defence, +2 to hide checks.",
+      "Invisibility - You can also use a special action and extend your power to another character within 10in. So long as this character remains within 10in of you, he enjoys the benefits of your power. This lasts until the beginning of your next turn and adds +1 difficulty to your Recharge checks."]
+  },
   "Iron_Will": {
     "power_name": "Iron Will",
     "power_type": "minor",
@@ -238,9 +247,11 @@
   "Obscurement": {
     "power_name": "Obscurement",
     "power_type": "minor",
-    "description": "Anytime a foe tries to detect you, he must make a TN3 perception check. If failed you get +1 re-roll to Body Damage attacks, +1 re-roll to Body Damage defence, +1 to hide checks",
+    "description": "You can render yourself difficult to see as a free action.",
     "stat_changes": {},
-    "notes": ["Obscurement - (Recharge 1+) Anytime a foe tries to detect you, he must make a TN3 perception check. If failed you get +1 re-roll to Body Damage attacks, +1 re-roll to Body Damage defence, +1 to hide checks."]
+    "notes": [
+      "Obscurement - (Recharge 1+) Anytime a foe tries to detect you, he must make a TN3 perception check. If failed you get +1 re-roll to Body Damage attacks, +1 re-roll to Body Damage defence, +1 to hide checks.",
+      "Obscurement - You can also use a special action and extend your power to another character within 10in. So long as this character remains within 10in of you, he enjoys the benefits of your power. This lasts until the beginning of your next turn and adds +1 difficulty to your Recharge checks."]
   },
   "Power_Blasts_(Minor)": {
     "power_name": "Power Blasts (Minor)",
