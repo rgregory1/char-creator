@@ -2,19 +2,33 @@ import pprint
 
 def print_out_hero(hero):
     print('final results \n \n \n \n')
-    print('Name:  ' + hero['hero_name'] + '\n')
-    print('Archetype: ' + hero['hero_arch'])
+    # print name (Special level) or just name
+    if hero['hero_archetype_list'][0]['power_type'] != 'Standard':
+        print('Name:  ' + hero['hero_name'] + ' (' + hero['hero_archetype_list'][0]['power_type'] + ')' + '\n')
+    else:
+        print('Name:  ' + hero['hero_name'] + '\n')
+
+    # print standard archetypes
+    if len(hero['hero_archetype_list']) == 1:
+        print('Archetype: ' + hero['hero_archetype_list'][0]['archetype'])
+    if len(hero['hero_archetype_list']) == 2:
+        print('Archetype: ' + hero['hero_archetype_list'][1]['archetype'])
+    if len(hero['hero_archetype_list']) == 3:
+        print('Archetype: ' + hero['hero_archetype_list'][1]['archetype'])
+        print('           ' + hero['hero_archetype_list'][2]['archetype'])
+
+
     print('Move:  ' + str(hero['move']).rjust(5))
     print( '\n')
     print('Body Points:  ' + str(hero['body_points'] * '[ ] ') + '[KO]')
-    print('Psyche Points:  ' + str(hero['psych_points'] * '[ ] ') + '[KO] \n')
+    print('Psyche Points:  ' + str(hero['psych_points'] * '[ ] ') + '[KO]')
 # melee stat line
     if hero['melee_attack_rr'] == 0 and hero['melee_defence_rr'] == 0:
-        print('Melee Att: ' + str(hero['melee_attack']) + ' \t Melee Def: ' + str(hero['melee_defence']))
+        print('Melee Att:  ' + str(hero['melee_attack']) + ' \t Melee Def:  ' + str(hero['melee_defence']))
     elif hero['melee_attack_rr'] == 0 and hero['melee_defence_rr'] != 0:
-        print('Melee Att: ' + str(hero['melee_attack']) + ' \t Melee Def: ' + str(hero['melee_defence']) + '[' + str(hero['melee_defence_rr']) + ']')
+        print('Melee Att:  ' + str(hero['melee_attack']) + ' \t Melee Def:  ' + str(hero['melee_defence']) + '[' + str(hero['melee_defence_rr']) + ']')
     else:
-        print('Melee Att: ' + str(hero['melee_attack']) + '[' + str(hero['melee_attack_rr']) + ']' + ' \t Melee Def: ' + str(hero['melee_defence']) + '[' + str(hero['melee_defence_rr']) + ']')
+        print('Melee Att:  ' + str(hero['melee_attack']) + '[' + str(hero['melee_attack_rr']) + ']' + ' \t Melee Def:  ' + str(hero['melee_defence']) + '[' + str(hero['melee_defence_rr']) + ']')
 # ranged stat line
     if 'ranged_attack' not in hero:
         if hero['ranged_defence_rr'] == 0:

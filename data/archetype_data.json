@@ -165,7 +165,7 @@
     "archetype": "Speedster",
     "power_name": "Speedster",
     "power_type": "Standard",
-    "description": "",
+    "description": "You move at lightning speed! Streak into battle to scout the field or get the first strike in!",
     "move": 40,
     "body_points": 6,
     "psych_points": 6,
@@ -241,7 +241,9 @@
       "Super-Agility",
       "Super-Strength",
       "Telekinesis",
-      "Teleport"
+      "Teleport",
+      "Vampire",
+      "X-Factor"
     ]
   },
   "Powerhouse": {
@@ -284,9 +286,14 @@
     "min_p_num": 2,
     "minor_p_list": [
       "Armor",
+      "Amphibious",
+      "Barrier",
       "Burrowing",
+      "Construct",
       "Damage_Field",
       "Density_Increase",
+      "Dispel",
+      "Duplicate",
       "Enhance_(Minor)",
       "Enhanced_Senses",
       "Entangle",
@@ -295,14 +302,18 @@
       "Force-Field",
       "Fortune",
       "Gadgets",
-      "Immortal",
+      "Grenades",
+      "Growth",
+      "Invisibility",
       "Iron_Will",
       "Leaping",
       "Magic_Artifact",
       "Massive",
       "Melee_Specialist",
       "Mimic",
+      "Multiple_Limbes",
       "Obscurement",
+      "Parasite",
       "Power_Blasts_(Minor)",
       "Rage",
       "Rapport",
@@ -310,13 +321,18 @@
       "Resistance",
       "Reflection",
       "Savant",
+      "Save",
+      "Servitor-Sidekick",
       "Shield",
+      "Shrinking",
       "Sonic_Blasts",
       "Stun",
       "Super-Agility",
       "Super-Strength",
       "Telekinesis",
-      "Teleport"
+      "Teleport",
+      "Vampire",
+      "X-Factor"
     ]
   }
 }

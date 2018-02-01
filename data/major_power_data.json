@@ -101,10 +101,13 @@
   "Speed": {
     "power_name": "Speed",
     "power_type": "major",
-    "description": "",
+    "description": "You possess blinding speed!",
     "stat_changes": {},
     "notes": [
-      "Speed - "]
+      "Speed - You can move over deep or dangerous water terrain as if it was clear ground so long as you do not stop. So long as you end your movement on level terrain, you can move up vertical objects as if they were normal ground.",
+      "You can also spend a combat action to do either (but not both) of the following:",
+      "\tMachinegun Punch: (Recharge 2+) You strike your foe hundreds of times in the span of several seconds. This is a +1D melee attack that cannot be used on the charge.",
+      "\tMove-by Attack: (Recharge 2+) Attack foes along your path as you move by them. If your attack succeeds, you can disengage without suffering the normal free attack and move to the next foe along your path. Take any path between foes so long as you adhere to normal movement rules. Once an attack fails, you remain in base contact with the foe who successfully resisted you. This does not count as a charge attack."]
   },
   "Super-Strength": {
     "power_name": "Super-Strength",

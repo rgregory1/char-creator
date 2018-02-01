@@ -431,6 +431,22 @@
     "notes": [
       "Teleport - Teleporting costs a move action, and when you do so make a goal roll. You move up to 10in + 5in per goal scored. You can move to any point on the board whether you can see it or not. If you teleport out of melee combat, your foe still gets a free attack on you. If you are knocked back from a successful hit, measure your teleport distance from the point where your knockback ends."]
   },
+  "Vampire": {
+    "power_name": "Vampire",
+    "power_type": "minor",
+    "description": "You’re a life-draining vampire!",
+    "stat_changes": {},
+    "notes": [
+      "Vampire - You possess a 4D[1] Psyche attack you can only use in melee. Any foe you KO in melee using this power suffers an additional -1 to his Injury check, and if that foe later perishes during the post-battle sequence, make a 2+ Chance roll. On a success that foe rises again as your undead thrall!"]
+  },
+  "X-Factor": {
+    "power_name": "X-Factor",
+    "power_type": "minor",
+    "description": "You’re a life-draining vampire!",
+    "stat_changes": {},
+    "notes": [
+      "X-Factor - At the beginning of each game, before any characters have been placed, select one of the archetype maneuvers from Chapter 3 as a minor power for the game. "]
+  },
   "Clever": {
     "power_name": "Clever",
     "power_type": "boost",
