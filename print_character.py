@@ -20,8 +20,12 @@ def print_out_hero(hero):
 
     print('Move:  ' + str(hero['move']).rjust(5))
     print( '\n')
-    print('Body Points:  ' + str(hero['body_points'] * '[ ] ') + '[KO]')
-    print('Psyche Points:  ' + str(hero['psych_points'] * '[ ] ') + '[KO]')
+    if 'numbers' in hero:
+        print('Numbers:  ' + str(hero['numbers']))
+    else:
+        print('Body Points:  ' + str(hero['body_points'] * '[ ] ') + '[KO]')
+        print('Psyche Points:  ' + str(hero['psych_points'] * '[ ] ') + '[KO]')
+    print()
 # melee stat line
     if hero['melee_attack_rr'] == 0 and hero['melee_defence_rr'] == 0:
         print('Melee Att:  ' + str(hero['melee_attack']) + ' \t Melee Def:  ' + str(hero['melee_defence']))
@@ -58,7 +62,11 @@ def print_out_hero(hero):
             print('Psyche Att: ' + str(hero['psyche_attack']) + '[' + str(hero['psyche_attack_rr']) + ']' + ' \t Psyche Def: ' + str(hero['psyche_defence']) + '[' + str(hero['psyche_defence_rr']) + ']')
 # print major power
     print('\n')
-    print('Major Power: ' + hero['hero_majp'] + '\n')
-
+    if len(hero['hero_major_power_list']) > 0:
+        print('Major Power: ')
+        for i,major in enumerate(hero['hero_major_power_list']):
+            print('        ', hero['hero_major_power_list'][i]['power_name'])
+    print()
     print('Notes: \n')
-    print(hero['hero_notes'])
+    for n, note in enumerate(hero['hero_notes']):
+        print(hero['hero_notes'][n])
