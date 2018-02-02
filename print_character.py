@@ -67,6 +67,11 @@ def print_out_hero(hero):
         for i,major in enumerate(hero['hero_major_power_list']):
             print('        ', hero['hero_major_power_list'][i]['power_name'])
     print()
+
+    print('Minor Power: ')
+    for i,major in enumerate(hero['hero_minor_power_list']):
+        print('        ', hero['hero_minor_power_list'][i]['power_name'])
+    print()
     print('Notes: \n')
     for n, note in enumerate(hero['hero_notes']):
         print(hero['hero_notes'][n])
