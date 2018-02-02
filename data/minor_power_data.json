@@ -207,6 +207,15 @@
     "stat_changes": {},
     "notes": ["Leaping - 4D action check. Declare where you want to land. You can leap up to 10in + goals scored high and 20in + goals scored long."]
   },
+  "Legion": {
+    "power_name": "Legion",
+    "power_type": "minor",
+    "description": "You travel in large numbers. This power adds 5 additional henchmen to a group.",
+    "stat_changes": {
+      "numbers": 5
+    },
+    "notes": ["Legion - This henchmen group starts with 15 members."]
+  },
   "Magic_Artifact": {
     "power_name": "Magic Artifact",
     "power_type": "minor",
@@ -405,8 +414,8 @@
     },
     "notes": ["Super-Agility - +1D on Knock down checks, move along verticle surfaces, and spend a Move action to move 15in"]
   },
-  "Super-Strength": {
-    "power_name": "Super-Strength",
+  "Super-Strength_(Minor)": {
+    "power_name": "Super-Strength (Minor)",
     "power_type": "minor",
     "description": "You possess enhanced strength greater than any normal human.",
     "stat_changes": {

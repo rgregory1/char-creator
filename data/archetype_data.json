@@ -20,7 +20,7 @@
       "Iron_Will",
       "Resistance",
       "Reaction",
-      "Super-Strength"
+      "Super-Strength_(Minor)"
     ]
   },
   "Brawler": {
@@ -136,7 +136,7 @@
       "Resistance",
       "Savant",
       "Super-Agility",
-      "Super-Strength"
+      "Super-Strength_(Minor)"
     ]
   },
   "Sorcerer": {
@@ -239,11 +239,33 @@
       "Sonic_Blasts",
       "Stun",
       "Super-Agility",
-      "Super-Strength",
+      "Super-Strength_(Minor)",
       "Telekinesis",
       "Teleport",
       "Vampire",
       "X-Factor"
+    ]
+  },
+  "Henchmen": {
+    "archetype": "Henchmen",
+    "power_name": "Henchmen",
+    "power_type": "Henchmen",
+    "description": "Whether blasting away at range or fighting in melee, henchmen try to overwhelm their foes with sheer numbers. Your minor power selections will determine your group’s capabilities and style.",
+    "move": 6,
+    "body_points": 0,
+    "psych_points": 0,
+    "numbers": 10,
+    "maj-p": [],
+    "min_p_num": 2,
+    "minor_p_list": [
+      "Armor",
+      "Flight",
+      "Legion",
+      "Melee_Specialist",
+      "Power_Blasts_(Minor)",
+      "Resistance",
+      "Super-Agility",
+      "Super-Strength_(Minor)"
     ]
   },
   "Powerhouse": {
@@ -328,7 +350,7 @@
       "Sonic_Blasts",
       "Stun",
       "Super-Agility",
-      "Super-Strength",
+      "Super-Strength_(Minor)",
       "Telekinesis",
       "Teleport",
       "Vampire",

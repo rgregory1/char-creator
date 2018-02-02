@@ -66,6 +66,8 @@ def assign_base_points(hero_info, new):
     hero_info['body_points'] = new['body_points']
     hero_info['psych_points'] = new['psych_points']
     hero_info['move'] = new['move']
+    if 'numbers' in new:
+        hero_info['numbers'] = new['numbers']
     return(hero_info)
 
 def assign_max_points(hero_info, new):
@@ -133,8 +135,10 @@ hero['hero_archetype_list'].append(current_archetype)
 # hero['hero_type'] = hero['main_archetype']['power_type']
 hero['hero_type'] = hero['hero_archetype_list'][0]['power_type']
 
+pprint.pprint(current_archetype)
+time.sleep(5)
 # if chosen archetype is standard, set stats
-if hero['hero_archetype_list'][0]['power_type'] == 'Standard':
+if hero['hero_archetype_list'][0]['power_type'] == 'Standard' or hero['hero_archetype_list'][0]['power_type'] == 'Henchmen':
     hero = assign_base_points(hero, hero['hero_archetype_list'][0])
 # if archetype is alt power level, start to do special stuff
 elif hero['hero_archetype_list'][0]['power_type'] == 'Super' or hero['hero_archetype_list'][0]['power_type'] == 'Powerhouse':
@@ -259,6 +263,7 @@ for arch in mutable_archetype_list:
                     del current_minor_power_dict['Magic_Artifact']
                     del current_minor_power_dict['Shield']
                     del current_minor_power_dict['Immortal']
+                    del current_minor_power_dict['Legion']
                 # Set number of loops
                 loops = current_major_power['add_minor_powers_number']
 
@@ -289,6 +294,7 @@ for arch in mutable_archetype_list:
             # Remove imortal from dict
             super_min_power_dict = copy.deepcopy(min_power_dict)
             del super_min_power_dict['Immortal']
+            del super_min_power_dict['Legion']
             current_minor_power, current_minor_power_dict = choose_power(super_min_power_dict, 'Bonus Power')
             # adjust stats based on major power choosen
             hero = hero_stat_adjust(hero,current_minor_power['stat_changes'])
