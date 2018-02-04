@@ -135,8 +135,7 @@ hero['hero_archetype_list'].append(current_archetype)
 # hero['hero_type'] = hero['main_archetype']['power_type']
 hero['hero_type'] = hero['hero_archetype_list'][0]['power_type']
 
-pprint.pprint(current_archetype)
-time.sleep(5)
+
 # if chosen archetype is standard, set stats
 if hero['hero_archetype_list'][0]['power_type'] == 'Standard' or hero['hero_archetype_list'][0]['power_type'] == 'Henchmen':
     hero = assign_base_points(hero, hero['hero_archetype_list'][0])
@@ -167,16 +166,13 @@ elif hero['hero_archetype_list'][0]['power_type'] == 'Super' or hero['hero_arche
 
 print('\n finished with archetypes \n')
 time.sleep(1)
-# print('here is the hero archetype list')
-# print(hero['hero_archetype_list'])
+
 
 
 # begin Major Power choice and adjustments -------------------------------------
 # Create archetype dict that we can destroy
 mutable_archetype_list = [x for x in hero['hero_archetype_list']]
-# print('here is the mutable archetype list')
-# print(mutable_archetype_list)
-# time.sleep(3)
+
 # check for powerhouse and ajust for double archetype powers, first if = super power level
 if len(mutable_archetype_list) == 2:
     del mutable_archetype_list[0]
@@ -188,14 +184,8 @@ if len(mutable_archetype_list) == 3:
 
 for arch in mutable_archetype_list:
     # check if only one major power available, if so set it to current
-    # print(len(arch['maj-p']))
-    # if arch['maj-p'] is True:
-    #     print('arch majp - True')
-    # if arch['maj-p'] is False:
-    #     print('arch majp - false')
-    # time.sleep(3)
+
     if len(arch['maj-p']) == 0:
-        print('length 0')
         pass
     else:
         if len(arch['maj-p']) > 0:
@@ -214,10 +204,7 @@ for arch in mutable_archetype_list:
                 if majp_choice == maj_power_dict[majorpower]['power_name']:
                     current_major_power = maj_power_dict[majorpower].copy()
                     break
-            print()
-            print(current_major_power)
-            print()
-            time.sleep(2)
+
             # assign major power choice to the hero dict
             hero['hero_major_power_list'].append(current_major_power)
             #hero['hero_major_power_list'].insert(0, current_major_power)
@@ -350,25 +337,18 @@ for arch in mutable_archetype_list:
                     if current_minor_power_dict[x]['power_type'] == 'boost':
                         del current_minor_power_dict[x]
         loops -= 1
-        # print(current_minor_power)
-        # print('removing a loop')
-        # print(loops)
-        #time.sleep(4)
-        # Begin to address Immortal minor power
+
         if loops <= 1:
             if 'Immortal' in current_minor_power_dict:
                 del current_minor_power_dict['Immortal']
-                # print('you choose imortal')
-                # time.sleep(4)
+
         if current_minor_power['power_name'] == 'Immortal':
             loops -= 1
-            # print('removing a loop because of imortal')
-            # print(loops)
-            # time.sleep(4)
+
 
 # choose a couple of backgrounds for your character
 loops = 2
-backgrounds = ['Alien/Dimensional', 'Arcane', 'Art', 'Athletics', 'Blue Collar', 'Business', 'Criminal', 'Espionage', 'Exploration', 'High Society', 'Journalist', 'Medicine', 'Military', 'Monarch', 'Performance', 'Public', 'Safety', 'Science', 'Social Science']
+backgrounds = ['Alien/Dimensional', 'Arcane', 'Art', 'Athletics', 'Blue Collar', 'Business', 'Criminal', 'Espionage', 'Exploration', 'High Society', 'Journalist', 'Medicine', 'Military', 'Monarch', 'Performance', 'Public Safety', 'Science', 'Social Science']
 while loops > 0:
     print(5 * '\n')
     print('\nYou may now choose ', str(loops), ' backgrounds from the following list: \n' )
@@ -381,16 +361,30 @@ while loops > 0:
     loops -= 1
 
 
+def henchman_stat_redux(henchmen_group):
+    redux_stats = ['melee_attack', 'melee_defence', 'ranged_attack', 'ranged_defence', 'psyche_attack', 'psyche_defence']
+    for redux_stat in redux_stats:
+        for hero_key, hero_value in henchmen_group.items():
+            if hero_key == redux_stat:
+                if hero_value == 4:
+                    henchmen_group[hero_key] = 2
+                if hero_value == 5 or hero_value == 6:
+                    henchmen_group[hero_key] = 3
+    return(henchmen_group)
 
 
+
+if hero['hero_archetype_list'][0]['archetype'] == 'Henchmen':
+    print('starting henchman function')
+    hero = henchman_stat_redux(hero)
 
 
 
 print(5 * '\n')
+print_out_hero(hero)
 logging.debug(pprint.pformat(hero))
 
-print_out_hero(hero)
+
 # Construct minor power stat change Choices
-# Everything about Henchmen
+# Someday street level henchmen
 # Growth - Giant Option
-# Finish Speed major power

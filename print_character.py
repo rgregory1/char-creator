@@ -19,7 +19,7 @@ def print_out_hero(hero):
 
 
     print('Move:  ' + str(hero['move']).rjust(5))
-    print( '\n')
+    print()
     if 'numbers' in hero:
         print('Numbers:  ' + str(hero['numbers']))
     else:
@@ -72,6 +72,11 @@ def print_out_hero(hero):
     for i,major in enumerate(hero['hero_minor_power_list']):
         print('        ', hero['hero_minor_power_list'][i]['power_name'])
     print()
+    print('Backgrounds: ')
+    print('        ', hero['hero_backgrounds'][0])
+    print('        ', hero['hero_backgrounds'][0])
+    print()
+
     print('Notes: \n')
     for n, note in enumerate(hero['hero_notes']):
         print(hero['hero_notes'][n])
