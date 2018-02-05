@@ -74,7 +74,7 @@ def print_out_hero(hero):
     print()
     print('Backgrounds: ')
     print('        ', hero['hero_backgrounds'][0])
-    print('        ', hero['hero_backgrounds'][0])
+    print('        ', hero['hero_backgrounds'][1])
     print()
 
     print('Notes: \n')
