@@ -6,6 +6,7 @@ logging.basicConfig(level=logging.DEBUG)
 from print_character import *
 import time
 import copy
+from sheet import *
 
 # grab info from JSON file and assign it to a variable -----------------------
 
