@@ -292,18 +292,38 @@ for arch in mutable_archetype_list:
             hero['hero_minor_power_list'].insert(0, current_minor_power)
             hero['super_archetype_bonus'] = 'yes'
 
-    current_minor_power_dict = {}
-    for x in min_power_dict:
-        for y in arch['minor_p_list']:
-            if x == y:
-                current_minor_power_dict[x] = min_power_dict[x].copy()
-            elif min_power_dict[x]['power_type'] == 'boost':
-                current_minor_power_dict[x] = min_power_dict[x].copy()
+    # current_minor_power_dict = {}
+    # for x in min_power_dict:
+    #     for y in arch['minor_p_list']:
+    #         if x == y:
+    #             current_minor_power_dict[x] = min_power_dict[x].copy()
+    #         elif min_power_dict[x]['power_type'] == 'boost':
+    #             current_minor_power_dict[x] = min_power_dict[x].copy()
+    # if hero['hero_type'] == 'Super' or hero['hero_type'] == 'Powerhouse':
+    #     if 'Immortal' in current_minor_power_dict:
+    #         del current_minor_power_dict['Immortal']
+
+# begin experiment -------------------------------------------------------
+    if arch['archetype'] == 'Blaster' and current_major_power['power_name'] == 'Archery':
+        current_minor_power_dict = {}
+        for x in min_power_dict:
+            for y in arch['archer_minor_p_list']:
+                if x == y:
+                    current_minor_power_dict[x] = min_power_dict[x].copy()
+                elif min_power_dict[x]['power_type'] == 'boost':
+                    current_minor_power_dict[x] = min_power_dict[x].copy()
+    else:
+        current_minor_power_dict = {}
+        for x in min_power_dict:
+            for y in arch['minor_p_list']:
+                if x == y:
+                    current_minor_power_dict[x] = min_power_dict[x].copy()
+                elif min_power_dict[x]['power_type'] == 'boost':
+                    current_minor_power_dict[x] = min_power_dict[x].copy()
     if hero['hero_type'] == 'Super' or hero['hero_type'] == 'Powerhouse':
         if 'Immortal' in current_minor_power_dict:
             del current_minor_power_dict['Immortal']
-
-
+# end experiment -------------------------------------------------------
 
 
     # remove current minor powers from list for powerhouse archetype second group of minor power Choices

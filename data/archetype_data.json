@@ -19,7 +19,14 @@
       "Force-Field",
       "Iron_Will",
       "Resistance",
-      "Reaction",
+      "Reflection",
+      "Super-Strength_(Minor)"
+    ],
+    "archer_minor_p_list": [
+      "Enhance_(Minor)",
+      "Fortune",
+      "Iron_Will",
+      "Savant",
       "Super-Strength_(Minor)"
     ]
   },
