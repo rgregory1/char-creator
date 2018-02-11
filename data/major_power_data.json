@@ -13,7 +13,7 @@
       "Super-Agility"
     ],
     "additional_power_prefix": "Trick Arrow",
-    "add_minor_powers_number": 4,
+    "add_minor_powers_number": 3,
     "stat_changes": {
       "ranged_attack": 1,
       "ranged_attack_rr": 1
